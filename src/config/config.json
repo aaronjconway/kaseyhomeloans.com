@@ -1,0 +1,44 @@
+{
+  "site": {
+    "title": "Kasey Home Loans",
+    "base_url": "https://kaseyhomeloans.com",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "../../favicon.ico",
+    "logo": "../../favicon.ico",
+    "logo_darkmode": "/images/logo-darkmode.png",
+    "logo_width": "150",
+    "logo_height": "30",
+    "logo_text": "Kasey Home Loans Logo"
+  },
+
+  "settings": {
+    "search": true,
+    "pagination": 4,
+    "summary_length": 200
+  },
+
+  "params": {
+    "contact_form_action": "# todo: make ti run  a .ts file that sends to fub.",
+    "copyright": "Designed and Developed by Aaron Conway of Kasey Home Loans"
+  },
+
+  "navigation_button": {
+    "enable": true,
+    "label": "/src/config/config.json",
+    "link": "google.com"
+  },
+
+  "disqus": {
+    "enable": false,
+    "shortname": "themefisher-template",
+    "settings": {},
+    "comment": "todo: personalize theme"
+  },
+
+  "metadata": {
+    "meta_author": "Aaron Conway",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Kasey Home Loans Website"
+  }
+}

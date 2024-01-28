@@ -1,0 +1,60 @@
+$sm: 640px; // phone
+$md: 768px; //tablets?
+$lg: 1024px; //idk
+$xl: 1280px; //desktop
+$xxl: 1536px; //big ass computers over this size
+
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent >0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+:root {
+
+  // spacing
+  --space-unit: 1em;
+  --space-xxs: calc(0.25 * var(--space-unit)); // 4px
+  --space-xs: calc(0.5 * var(--space-unit)); // 8px
+  --space-sm: calc(0.75 * var(--space-unit)); // 12px
+  --space-md: calc(1.5 * var(--space-unit)); // 20px
+  --space-lg: calc(2 * var(--space-unit)); // 32px
+  --space-xl: calc(4 * var(--space-unit)); // 52px
+  --space-xxl: calc(6 * var(--space-unit)); // 84px
+
+  //colors
+  --light-green: #e6f4f1;
+  --green: #0F5257; //midnight green
+
+  --light-blue: #e0f1ff;
+  --blue: #376EB1; //amex blue
+
+  --dark-blue: #1C2352;
+  --rose: #9C92A3; //rose quartz
+  --thistle: #C6B9CD; //thistle
+  --lavender: #D6D3F0; //lavender
+
+  --light-grey: #f0f0f0;
+
+  --ink: #333;
+  --paper: #ffffff;
+  --background-color: #FFFFFF;
+  --link-color: #005fb9;
+
+  //set colors todo: shouldn't we put this in a color place? or
+  //maybe all the vars should be in the body tag in the layout.
+
+  //this looks awfuly like a colors file
+
+  body {
+    color: var(--ink);
+    background-color: var(--paper);
+  }
+
+}

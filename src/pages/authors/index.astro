@@ -1,0 +1,35 @@
+---
+import AuthorCard from "@/components/AuthorCard.astro";
+
+import Layout from "@/layouts/Layout.astro";
+
+import { getSinglePage } from "@/lib/contentParser.astro";
+
+import PageHeader from "@/components/PageHeader.astro";
+
+import { getEntry } from "astro:content";
+
+const authorIndex = await getEntry("authors", "-index");
+const authors = await getSinglePage("authors");
+---
+
+<Layout
+  title={authorIndex.data.title}
+  description="A collection of the authors responsible for writing content on Kasey Home Loans."
+  image_path="todo: add image collage of authors"
+>
+  <PageHeader title={authorIndex.data.title} />
+  <section class="section-sm pb-0">
+    <div class="container">
+      <div class="row justify-center">
+        {
+          authors.map((author) => (
+            <div class="mb-14 md:col-6 lg:col-4">
+              <AuthorCard {author} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

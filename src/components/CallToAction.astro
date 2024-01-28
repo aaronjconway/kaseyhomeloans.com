@@ -1,0 +1,46 @@
+---
+import ImageMod from "@/components/ImageMod.astro";
+import { markdownToHtml } from "@/lib/utils/textConverter";
+const { call_to_action } = Astro.props;
+---
+
+{
+  call_to_action.data.enable && (
+    <section class="">
+      <div class="container">
+        <div class="">
+          <div class="">
+            <div class="">
+              <ImageMod
+                class=""
+                src={call_to_action.data.image}
+                width={392}
+                height={390}
+                alt="cta-image"
+                format="webp"
+              />
+            </div>
+            <div class="">
+              <h2
+                set:html={markdownToHtml(call_to_action.data.title)}
+                class=""
+              />
+              <p
+                set:html={markdownToHtml(call_to_action.data.description)}
+                class=""
+              />
+              {call_to_action.data.button.enable && (
+                <a
+                  class="btn btn-primary"
+                  href={call_to_action.data.button.link}
+                >
+                  {call_to_action.data.button.label}
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

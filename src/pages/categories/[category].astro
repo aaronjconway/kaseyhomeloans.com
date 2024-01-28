@@ -1,0 +1,45 @@
+---
+import BlogCard from "@/components/BlogCard.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { getTaxonomy } from "@/lib/taxonomyParser.astro";
+import taxonomyFilter from "@/lib/utils/taxonomyFilter";
+import PageHeader from "@/components/PageHeader.astro";
+
+// get static paths for all categories
+export async function getStaticPaths() {
+  const BLOG_FOLDER = "blog";
+  const categories = await getTaxonomy(BLOG_FOLDER, "categories");
+
+  return categories.map((category) => {
+    return {
+      params: { category },
+    };
+  });
+}
+
+const { category } = Astro.params;
+
+// get posts by category
+const BLOG_FOLDER = "blog";
+const posts = await getSinglePage(BLOG_FOLDER);
+const filterByCategories = taxonomyFilter(posts, "categories", category!);
+const description = "tood: get better description for each category";
+---
+
+<Layout title={category} description={description} image_path="">
+  <PageHeader title={category} />
+  <div class="section-sm pb-0">
+    <div class="container">
+      <div class="row">
+        {
+          filterByCategories.map((post) => (
+            <div class="mb-14 md:col-6 lg:col-4">
+              <BlogCard data={post} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,70 @@
+---
+//init
+import { Image } from "astro:assets";
+---
+
+<style lang="scss">
+  @use "../../styles/_base.scss";
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 1rem;
+
+    @media (max-width: base.$lg) {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        font-weight: bold;
+        margin: 0;
+        padding-bottom: var(--space-sm);
+        line-height: 1.14;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+
+      .sub-heading {
+        color: var(--blue);
+        font-weight: bold;
+        padding-bottom: var(--space-xs);
+        margin: 0rem;
+      }
+    }
+  }
+
+  .hero-wrapper {
+    display: flex;
+    padding: var(--space-xxl) 0;
+  }
+</style>
+
+<section>
+  <div class="hero-wrapper">
+    <div class="grid">
+      <div class="hero-content">
+        <p class="sub-heading">Our Value</p>
+        <h1>Fast and Reliable Home Buying Experts.</h1>
+        <p class="subtitle">
+          Work with our transparent and highly experienced mortagage
+          professionals with access to wholesale pricing.
+        </p>
+      </div>
+      <div class="hero-image">
+        <!-- <Image -->
+        <!--   src={"/images/service-1.png"} -->
+        <!--   height={1000} -->
+        <!--   width={1000} -->
+        <!--   alt="test" -->
+        <!-- /> -->
+      </div>
+    </div>
+  </div>
+</section>

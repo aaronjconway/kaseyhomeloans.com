@@ -1,0 +1,110 @@
+@use 'base.scss';
+
+header {
+  white-space: nowrap;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $lg) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.nav-bar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width:$lg) {
+    width: auto;
+  }
+
+}
+
+.hamburger {
+  display: block;
+
+  @media (min-width: $lg) {
+    display: none
+  }
+
+}
+
+//<MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+
+.menu-items {
+  width: 100%;
+
+  @media (min-width:$lg) {
+    display: flex;
+    position: relative;
+    width: auto;
+  }
+
+}
+
+ul.nav-link-container {
+
+  a,
+  button {
+    color: var(--ink);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+//the actual dropdown when it opens
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  position: block;
+  z-index: 10;
+  margin: 1rem 0rem;
+  background: var(--paper);
+
+  @media (min-width: $lg) {
+    padding: 1rem 2rem 1rem 1rem;
+    top: 4rem;
+    border: 1px solid lightslategray;
+    border-radius: 4px;
+    position: absolute;
+
+    background: var(--paper);
+  }
+
+  .nav-link {
+    padding: .5rem 0rem;
+    color: var(--ink);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.menu-items .hidden {
+  display: none;
+}
+
+.nav-link-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0rem;
+
+  @media (min-width:$lg) {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    gap: 3rem;
+
+  }
+
+}

@@ -1,0 +1,15 @@
+---
+//todo get a better breadcrum from astro-kaseyhomeloans
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+
+const { title = "" }: { title?: string } = Astro.props;
+---
+
+<section>
+  <div class="container">
+    <div class="">
+      <h1>{title}</h1>
+      <Breadcrumbs className="" />
+    </div>
+  </div>
+</section>

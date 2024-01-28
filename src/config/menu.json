@@ -1,0 +1,66 @@
+{
+  "menu_links": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "About",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "About Us",
+          "url": "/about"
+        },
+        {
+          "name": "Our Team",
+          "url": "/authors"
+        },
+        {
+          "name": "Licensing",
+          "url": "/licensing"
+        },
+        {
+          "name": "Technolgy",
+          "url": "/technology"
+        }
+      ]
+    },
+    {
+      "name": "Style Guide",
+      "url": "/style-guide"
+    },
+    {
+      "name": "Learn",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Contact",
+          "url": "/contact"
+        },
+        {
+          "name": "Blog",
+          "url": "/blog"
+        },
+        {
+          "name": "Authors",
+          "url": "/authors"
+        },
+        {
+          "name": "Categories",
+          "url": "/categories"
+        },
+        {
+          "name": "Tags",
+          "url": "/tags"
+        },
+        {
+          "name": "404 Page",
+          "url": "/404"
+        }
+      ]
+    }
+  ]
+}

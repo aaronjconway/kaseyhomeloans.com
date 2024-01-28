@@ -1,0 +1,45 @@
+---
+const { tags, categories, allCategories } = Astro.props;
+---
+
+<div>
+  <!-- categories -->
+  <div>
+    <h5>Categories</h5>
+    <div>
+      <ul>
+        {
+          categories.map((category: any) => {
+            const count = allCategories.filter(
+              (c: any) => c === category,
+            ).length;
+            return (
+              <li>
+                <a href={`/categories/${category}`}>
+                  {category} <span>({count})</span>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+  <!-- tags -->
+  <div>
+    <h5>Tags</h5>
+    <div>
+      <ul>
+        {
+          tags.map((tag: any) => {
+            return (
+              <li>
+                <a href={`/tags/${tag}`}>{tag}</a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+</div>

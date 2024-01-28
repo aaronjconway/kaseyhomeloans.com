@@ -1,0 +1,51 @@
+---
+import Link from "@/components/navbar/link.astro";
+import Dropdown from "./dropdown_menu.astro";
+import Astronav from "@/components/navbar/Astronav.astro";
+import MenuItems from "@/components/navbar/MenuItems.astro";
+import MenuIcon from "@/components/navbar/MenuIcon.astro";
+import { menu_links } from "@/config/menu.json";
+import Logo from "../Logo.astro";
+---
+
+<div class="container">
+  <header class="">
+    <Astronav>
+      <div class="nav-bar">
+        <a href="/" class=""><Logo /></a>
+        <MenuIcon class="hamburger" />
+      </div>
+      <MenuItems class="menu-items hidden">
+        <ul class="nav-link-container">
+          {
+            menu_links.map((item, index) => (
+              <>
+                {item.children && (
+                  <Dropdown title={item.name} children={item.children} />
+                )}
+
+                {!item.children && (
+                  <li>
+                    <a href={item.url} class="nav-link">
+                      <span> {item.name}</span>
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+        <div class="lg:hidden items-center gap-4">
+          <!-- todo add correct lin -->
+          <a href="/" class="btn nav-button">Get More Info</a>
+        </div>
+      </MenuItems>
+    </Astronav>
+    <div>
+      <div class="hidden lg:flex items-center gap-4">
+        <!-- todo add correct lin -->
+        <a href="/" class="btn nav-button">Get More Info</a>
+      </div>
+    </div>
+  </header>
+</div>

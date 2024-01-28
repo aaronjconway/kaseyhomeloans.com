@@ -1,0 +1,26 @@
+---
+import Dropdown from "@/components/navbar/Dropdown.astro";
+import DropdownItems from "./DropdownItems.astro";
+import OpenIcon from "./OpenIcon.astro";
+const { title, children } = Astro.props;
+
+interface DropDownItem {
+  name: string;
+  url: string;
+}
+---
+
+<Dropdown class:list={["dropdown-link"]}>
+  <button>
+    <span>{title}</span>
+  </button>
+  <DropdownItems class:list={["dropdown-container"]}>
+    {
+      children.map((item: DropDownItem) => (
+        <a href={item.url} class="nav-link">
+          <span>{item.name}</span>
+        </a>
+      ))
+    }
+  </DropdownItems>
+</Dropdown>
