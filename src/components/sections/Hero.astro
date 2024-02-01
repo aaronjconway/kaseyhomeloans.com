@@ -1,69 +1,80 @@
 ---
 //init
-import { Image } from "astro:assets";
+
+import { Image } from 'astro:assets';
+import hero_image from '../../assets/images/family.jpg';
 ---
 
 <style lang="scss">
-  @use "../../styles/_base.scss";
+  @use '../../styles/_base.scss';
+
+  section {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xxl);
+  }
 
   .grid {
     display: grid;
-    grid-template-columns: 1.25fr 1fr;
-    gap: 1rem;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
 
     @media (max-width: base.$lg) {
       grid-template-columns: 1fr;
     }
 
     .hero-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
       h1 {
         font-weight: bold;
         margin: 0;
-        padding-bottom: var(--space-sm);
-        line-height: 1.14;
+        padding: 0;
       }
 
       p {
-        font-size: 1.2em;
-      }
+        font-size: var(--text);
+        margin-top: var(--space-md);
 
-      .sub-heading {
-        color: var(--blue);
-        font-weight: bold;
-        padding-bottom: var(--space-xs);
-        margin: 0rem;
+        &.sub-heading {
+          margin: 0;
+          color: var(--blue);
+          font-weight: bold;
+        }
       }
     }
   }
 
-  .hero-wrapper {
+  .hero-image-wrapper {
     display: flex;
-    padding: var(--space-xxl) 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    height: 400px;
+    overflow: hidden;
+    width: auto;
+
+    @media (max-width: base.$lg) {
+      display: none;
+    }
+  }
+
+  .hero-image {
+    max-height: 100%;
+    object-fit: contain;
   }
 </style>
 
 <section>
-  <div class="hero-wrapper">
+  <div class="container">
     <div class="grid">
       <div class="hero-content">
         <p class="sub-heading">Our Value</p>
-        <h1>Fast and Reliable Home Buying Experts.</h1>
+        <h1>The Home Buying Experience You Deserve</h1>
         <p class="subtitle">
-          Work with our transparent and highly experienced mortagage
-          professionals with access to wholesale pricing.
+          Work with our transparent and highly experienced mortagage professionals with access to wholesale pricing.
         </p>
       </div>
-      <div class="hero-image">
-        <!-- <Image -->
-        <!--   src={"/images/service-1.png"} -->
-        <!--   height={1000} -->
-        <!--   width={1000} -->
-        <!--   alt="test" -->
-        <!-- /> -->
+      <div class="hero-image-wrapper">
+        <Image class="hero-image" src={hero_image} height={1200} alt="test" />
       </div>
     </div>
   </div>

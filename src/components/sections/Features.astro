@@ -1,0 +1,86 @@
+---
+//init
+---
+
+<style lang="scss">
+  @use '../../styles/_base.scss';
+
+  h2 {
+    margin: 0rem;
+    padding: 0rem;
+  }
+
+  .feature-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    p {
+      font-size: var(--text);
+      margin-top: var(--space-sm);
+    }
+
+    .sub-heading {
+      color: var(--blue);
+      font-weight: bold;
+      padding-bottom: var(--space-xs);
+      margin: 0rem;
+    }
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-xl);
+
+    .feature {
+      margin-top: var(--space-xl);
+      grid-column: span 1;
+
+      .heading {
+        font-size: var(--text-md);
+        font-weight: bold;
+      }
+
+      .content {
+        display: flex;
+        margin-top: var(--space-sm);
+        text-align: left;
+      }
+    }
+  }
+</style>
+
+<section class="">
+  <div class="container">
+    <div class="feature-content">
+      <p class="sub-heading">Benefits</p>
+      <h2>Why work with us?</h2>
+      <p class="subtitle">Mollis eros augue at est. Class aptent taciti sociosqu ad litora.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="heading">Knowlege</div>
+        <div class="content">
+          Neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc faucibus
+          posuere turpis. Sed laoreet, est sed gravida.
+        </div>
+      </div>
+      <div class="feature">
+        <div class="heading">Transparency</div>
+        <div class="content">
+          Neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc faucibus
+          posuere turpis. Sed laoreet, est sed gravida.
+        </div>
+      </div>
+      <div class="feature">
+        <div class="heading">Speed</div>
+        <div class="content">
+          Neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc faucibus
+          posuere turpis. Sed laoreet, est sed gravida.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

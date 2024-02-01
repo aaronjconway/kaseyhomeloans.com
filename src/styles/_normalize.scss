@@ -8,6 +8,13 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+
+//insane that so many semantic tags are padded
+menu {
+  padding: 0
+}
+
+
 html {
   line-height: 1.15;
   /* 1 */
@@ -374,7 +381,3 @@ template {
 /**
  * Add the correct display in IE 10.
  */
-
-[hidden] {
-  display: none;
-}

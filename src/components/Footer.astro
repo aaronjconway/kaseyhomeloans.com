@@ -1,51 +1,49 @@
 ---
 //todo make sure links are updated correctly to pages
-import Logo from "./Logo.astro";
+import Logo from './Logo.astro';
 const footerData = {
   links: [
     {
-      title: "Kasey Home Loans",
+      title: 'Kasey Home Loans',
       links: [
-        { text: "Buy a Home", href: "#" },
-        { text: "FAQs", href: "#" },
-        { text: "Loan Options", href: "#" },
-        { text: "Partners", href: "#" },
-        { text: "Rates", href: "#" },
-        { text: "Refinance", href: "#" },
+        { text: 'Buy a Home', href: '#' },
+        { text: 'FAQs', href: '#' },
+        { text: 'Loan Options', href: '#' },
+        { text: 'Partners', href: '#' },
+        { text: 'Rates', href: '#' },
+        { text: 'Refinance', href: '#' },
       ],
     },
     {
-      title: "About",
+      title: 'About',
       links: [
-        { text: "About Us", href: "#" },
-        { text: "Licensing", href: "#" },
-        { text: "Privacy Policy", href: "#" },
-        { text: "Technology", href: "#" },
-        { text: "Texas Compliance Notice", href: "#" },
+        { text: 'About Us', href: '#' },
+        { text: 'Licensing', href: '#' },
+        { text: 'Privacy Policy', href: '#' },
+        { text: 'Technology', href: '#' },
+        { text: 'Texas Compliance Notice', href: '#' },
       ],
     },
     {
-      title: "Support",
+      title: 'Support',
       links: [
-        { text: "Documentation", href: "#" },
-        { text: "Talk To Us", href: "#" },
+        { text: 'Documentation', href: '#' },
+        { text: 'Talk To Us', href: '#' },
       ],
     },
   ],
   socialLinks: [
-    { ariaLabel: "X", icon: "tabler:brand-x", href: "#" },
-    { ariaLabel: "Instagram", icon: "tabler:brand-instagram", href: "#" },
-    { ariaLabel: "Facebook", icon: "tabler:brand-facebook", href: "#" },
-    { ariaLabel: "RSS", icon: "tabler:rss", href: "/rss.xml" },
+    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    { ariaLabel: 'RSS', icon: 'tabler:rss', href: '/rss.xml' },
     {
-      ariaLabel: "Github",
-      icon: "tabler:brand-github",
-      href: "https://github.com/aaronjconway",
+      ariaLabel: 'Github',
+      icon: 'tabler:brand-github',
+      href: 'https://github.com/aaronjconway',
     },
   ],
   footNote: `
-    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm bg-[url()]"></span>
-    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="">Aaron Conway</a> · All rights reserved.
   `,
 };
 
@@ -54,121 +52,107 @@ const { socialLinks, links, footNote } = footerData;
 
 <style>
   footer {
-    position: relative;
     border-top-width: 1px;
     border-top-style: solid;
     border-color: slategray;
 
-    a {
-      font-size: var(--text-sm);
-      color: slategray;
+    ul {
+      padding-left: 0;
+      li {
+        list-style: none;
+        padding: var(--space-xxs) 0;
+        color: var(--mid-grey);
+        font-size: var(--text-sm);
+        &:hover {
+          color: slategray;
+          text-decoration: underline;
+        }
+      }
     }
   }
 
   .footer-content {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 1rem 2rem;
-    padding: 2rem 0;
-    @media (min-width: 640px) {
-      gap: 2rem;
-      padding: 3rem 0;
-    }
-    @media (min-width: 1024px) {
-      padding: 4rem 0;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-xl);
+    padding: var(--space-xl) 0;
   }
 
   .contact-info {
     display: flex;
     flex-direction: column;
+    gap: var(--space-xs);
+    font-size: var(--text-sm);
+    color: var(--mid-grey);
   }
 
   .footer-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
     white-space: nowrap;
-    grid-column: span 12;
-
-    @media (min-width: 768px) {
-      grid-column: span 6;
-    }
-
-    @media (min-width: 1024px) {
-      color: red;
-      grid-column: span 3;
-    }
-
-    .logo {
-      color: red;
-    }
   }
 
   .logo {
     margin-bottom: 1rem;
+
+    @media (min-width: 1024px) {
+      grid-column: span 1;
+    }
   }
 
   .address {
-    padding-left: 1rem;
+    margin: var(--space-md) 0;
+    font-size: var(--text-sm);
   }
 
   .address-text {
     display: block;
-    color: slategray;
+    color: var(--mid-grey);
+  }
+
+  hr {
+    background: var(--mid-grey);
   }
 </style>
 
 <footer>
   <div class="container">
-    <div class="footer-column logo">
-      <div class="logo">
-        <Logo />
-      </div>
-      <div class="contact-info">
-        <a href="tel:4806855869">+1 (480) 685-5869</a>
-        <a href="mail:info@kaseyhomeloans.com">info@kaseyhomeloans.com</a>
-      </div>
-
-      <div class="address">
-        <span class="address-text">7550 E McDonald Dr</span>
-        <span class="address-text">Ste E</span>
-        <span class="address-text">Scottsdale, AZ 85250</span>
-      </div>
-    </div>
-    {
-      links.map(({ title, links }) => (
-        <div class="footer-column">
-          <div class="title">{title}</div>
-          {links && Array.isArray(links) && links.length > 0 && (
-            <ul>
-              {links.map(({ text, href }) => (
-                <li class="footer-link">
-                  <a href={href}>{text}</a>
-                </li>
-              ))}
-            </ul>
-          )}
+    <div class="footer-content">
+      <div class="footer-column logo">
+        <div class="logo">
+          <Logo />
+          <hr />
         </div>
-      ))
-    }
-  </div>
-  <div class="social-wrapper">
-    {
-      socialLinks?.length ? (
-        <ul class="social-links">
-          {socialLinks.map(({}) => (
-            <li>
-              <a class="social-link" aria-label={"test"} href="/">
-                <div class="" />
-              </a>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        ""
-      )
-    }
+        <div class="contact-info">
+          <a href="tel:4806855869">Phone: +1 (480) 685-5869</a>
+          <a href="mail:info@kaseyhomeloans.com">Email: info@kaseyhomeloans.com</a>
+        </div>
 
-    <div class="footnote">
-      <Fragment set:html={footNote} />
+        <div class="address">
+          <span class="address-text">7550 E McDonald Dr</span>
+          <span class="address-text">Ste E</span>
+          <span class="address-text">Scottsdale, AZ 85250</span>
+        </div>
+      </div>
+      {
+        links.map(({ title, links }) => (
+          <div class="footer-column">
+            <div class="title"> {title}</div>
+            {links && Array.isArray(links) && links.length > 0 && (
+              <ul>
+                {links.map(({ text, href }) => (
+                  <li class="footer-link">
+                    <a href={href}>{text}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))
+      }
     </div>
   </div>
 </footer>

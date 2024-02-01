@@ -1,42 +1,19 @@
 ---
-import BlogCard from "@/components/BlogCard.astro";
-
 import Pagination from "@/components/Pagination.astro";
-
-import config from "@/config/config.json";
 
 import Layout from "@/layouts/Layout.astro";
 
-import { getSinglePage } from "@/lib/contentParser.astro";
-import { getAllTaxonomy, getTaxonomy } from "@/lib/taxonomyParser.astro";
-import { sortByDate } from "@/lib/utils/sortFunctions";
-
-import PageHeader from "@/components/PageHeader.astro";
 import PostSidebar from "@/components/PostSidebar.astro";
-import { getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
 const BLOG_FOLDER = "blog";
 
-const postIndex = await getEntry(BLOG_FOLDER, "-index");
-const posts = await getSinglePage(BLOG_FOLDER);
-const allCategories = await getAllTaxonomy(BLOG_FOLDER, "categories");
-const categories = await getTaxonomy(BLOG_FOLDER, "categories");
-const tags = await getTaxonomy(BLOG_FOLDER, "tags");
 
-const sortedPosts = sortByDate(posts);
+const posts = await getCollection('blog')
 
-//page count
-const totalPages: number = Math.ceil(posts.length / 4);
-
-//get the first 4 posts
-const currentPosts = sortedPosts.slice(0, 4);
 ---
 
-<Layout
-  title={postIndex.data.title}
-  image_path={postIndex.data.image ? postIndex.data.image : ""}
-  description={postIndex.data.description ? postIndex.data.description : ""}
->
+<Layout title={"Blog"} image={""} description={"the khl blog"}>
   <style lang="scss">
     .blog-wrapper {
       display: grid;
@@ -53,7 +30,7 @@ const currentPosts = sortedPosts.slice(0, 4);
     }
   </style>
 
-  <PageHeader title={postIndex.data.title} />
+  <!-- <PageHeader title={postIndex.data.title} /> -->
   <section class="section">
     <div class="container">
       <div class="blog-wrapper">
@@ -61,26 +38,12 @@ const currentPosts = sortedPosts.slice(0, 4);
         <div class="blog posts">
           <div class="row">
             {
-              currentPosts.map((post) => (
-                <div class="">
-                  <BlogCard data={post} />
-                </div>
-              ))
+              posts.map((post) => <div>{post.id}</div>
+              )
             }
           </div>
-          <Pagination
-            section={BLOG_FOLDER}
-            currentPage={1}
-            totalPages={totalPages}
-          />
         </div>
 
-        <PostSidebar
-          className="side-bar"
-          categories={categories}
-          tags={tags}
-          allCategories={allCategories}
-        />
       </div>
     </div>
   </section>

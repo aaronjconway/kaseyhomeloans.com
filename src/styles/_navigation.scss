@@ -1,8 +1,10 @@
 @use 'base.scss';
 
+
+
 header {
   white-space: nowrap;
-  padding: 1rem 0;
+  padding: var(--space-md) 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,6 +12,19 @@ header {
   @media (max-width: $lg) {
     display: flex;
     flex-direction: column;
+  }
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xl);
+
+  @media (max-width:$lg) {
+    display: block;
+    flex-direction: column;
+
   }
 }
 
@@ -34,10 +49,11 @@ header {
 
 }
 
-//<MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
 
 .menu-items {
+
   width: 100%;
+  gap: 1rem;
 
   @media (min-width:$lg) {
     display: flex;
@@ -47,56 +63,89 @@ header {
 
 }
 
-ul.nav-link-container {
-
-  a,
-  button {
-    color: var(--ink);
-
-    &:hover {
-      text-decoration: underline;
-    }
+.menu-items.hidden {
+  @media (min-width:$lg) {
+    display: flex
   }
 }
 
 
-//the actual dropdown when it opens
+
+ul.nav-link-container {
+  padding: 0;
+  margin: var(--space-md);
+
+  a,
+  li,
+  button {
+    color: var(--ink);
+    list-style: none;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+  }
+
+  @media (max-width: $lg) {
+    li {
+      margin: .5rem 0rem;
+    }
+  }
+}
+
+//call to action button
+.nav-cta {
+
+
+  @media (max-width: $lg) {
+    margin-top: 1rem;
+  }
+
+}
+
+
 .dropdown-container {
+  font-size: var(--text-sm);
+  margin: 3rem -5rem;
+  width: 10rem;
   display: flex;
   flex-direction: column;
-  position: block;
   z-index: 10;
-  margin: 1rem 0rem;
   background: var(--paper);
 
   @media (min-width: $lg) {
-    padding: 1rem 2rem 1rem 1rem;
+    display: flex;
     top: 4rem;
-    border: 1px solid lightslategray;
-    border-radius: 4px;
+    padding: var(--space-unit);
+    border: 1px solid lightgrey;
+    box-shadow: 0px 2px 5px rgb(0, 0, 0, .2);
+    border-radius: 3px;
     position: absolute;
-
     background: var(--paper);
+    top: 1rem;
   }
 
   .nav-link {
-    padding: .5rem 0rem;
+    padding: var(--space-xxs) 0rem;
     color: var(--ink);
 
     &:hover {
       text-decoration: underline;
+      cursor: pointer;
     }
   }
 }
 
-.menu-items .hidden {
+.hidden {
   display: none;
 }
+
 
 .nav-link-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   margin: 2rem 0rem;
 
   @media (min-width:$lg) {

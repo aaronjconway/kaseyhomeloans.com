@@ -1,3 +1,5 @@
+//tood: make a meta collection
+
 import { defineCollection, z } from "astro:content";
 
 // Post collection schema

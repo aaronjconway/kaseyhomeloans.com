@@ -1,6 +1,5 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
-import { markdownToHtml } from "@/lib/utils/textConverter";
 const { call_to_action } = Astro.props;
 ---
 
@@ -21,14 +20,8 @@ const { call_to_action } = Astro.props;
               />
             </div>
             <div class="">
-              <h2
-                set:html={markdownToHtml(call_to_action.data.title)}
-                class=""
-              />
-              <p
-                set:html={markdownToHtml(call_to_action.data.description)}
-                class=""
-              />
+              <h2/>
+              <p />
               {call_to_action.data.button.enable && (
                 <a
                   class="btn btn-primary"
