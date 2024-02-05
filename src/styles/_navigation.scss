@@ -51,13 +51,12 @@ header {
 
 
 .menu-items {
-
+  position: relative;
   width: 100%;
   gap: 1rem;
 
   @media (min-width:$lg) {
     display: flex;
-    position: relative;
     width: auto;
   }
 
@@ -73,7 +72,7 @@ header {
 
 ul.nav-link-container {
   padding: 0;
-  margin: var(--space-md);
+  margin: var(--space-md) 0;
 
   a,
   li,
@@ -84,7 +83,6 @@ ul.nav-link-container {
     border: none;
     margin: 0;
     padding: 0;
-    cursor: pointer;
 
   }
 
@@ -106,25 +104,24 @@ ul.nav-link-container {
 }
 
 
+
 .dropdown-container {
   font-size: var(--text-sm);
-  margin: 3rem -5rem;
-  width: 10rem;
   display: flex;
   flex-direction: column;
   z-index: 10;
   background: var(--paper);
 
+  // for big daddy screens
   @media (min-width: $lg) {
     display: flex;
-    top: 4rem;
-    padding: var(--space-unit);
-    border: 1px solid lightgrey;
-    box-shadow: 0px 2px 5px rgb(0, 0, 0, .2);
+    width: auto;
+    margin: var(--space-md) -20rem;
+    border: 1px solid var(--light-grey);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
     border-radius: 3px;
     position: absolute;
     background: var(--paper);
-    top: 1rem;
   }
 
   .nav-link {
@@ -133,11 +130,11 @@ ul.nav-link-container {
 
     &:hover {
       text-decoration: underline;
-      cursor: pointer;
     }
   }
 }
 
+//todo while testing on the drop down menu make sure to uncomment later
 .hidden {
   display: none;
 }

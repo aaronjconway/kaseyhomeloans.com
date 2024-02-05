@@ -1,5 +1,6 @@
-a.btn {
-  padding: .5rem 1rem;
+a.btn,
+button {
+  padding: var(--space-xs) var(--space-sm);
   text-align: center;
   text-decoration: none;
   background-color: var(--blue);
@@ -15,8 +16,9 @@ a.btn {
 
 }
 
-a.btn-secondary {
-  padding: 10px 20px;
+a.btn-secondary,
+button.secondary {
+  padding: var(--space-xs) var(--space-sm);
   font-weight: bold;
   text-align: center;
   text-decoration: none;

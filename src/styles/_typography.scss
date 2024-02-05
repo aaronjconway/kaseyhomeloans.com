@@ -1,5 +1,7 @@
 @use './base.scss';
 
+
+
 :root {
   //for body
   --font-body: system-ui;
@@ -49,9 +51,7 @@ h3,
 h4,
 form legend {
   font-family: var(--font-heading);
-  font-weight: bold;
   margin-bottom: var(--space-xxs);
-  line-height: var(--heading-line-height);
 }
 
 /* text size */
@@ -62,6 +62,7 @@ form legend {
 h1,
 .text--xxl {
   font-size: var(--text-xxl);
+  line-height: 1.1em;
 }
 
 h2,

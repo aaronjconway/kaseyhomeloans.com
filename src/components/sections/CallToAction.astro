@@ -1,0 +1,146 @@
+---
+//init
+import { Icon } from 'astro-icon/components';
+import DadJoke from '../../components/svelte/DadJoke.svelte';
+---
+
+<style lang="scss">
+  @use '../../styles/_base.scss';
+
+  .grid {
+    display: grid;
+    padding: var(--space-xl);
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+
+    @media (max-width: base.$lg) {
+      gap: var(--space-md);
+      padding: var(--space-md) 0;
+      grid-template-columns: 1fr;
+
+      .cta-content {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: start;
+
+        h2 {
+          font-weight: bold;
+          font-size: var(--text-xxl);
+          margin-top: var(--space-xxs);
+          padding: 0;
+        }
+
+        p {
+          font-size: var(--text);
+          margin-top: var(--space-md);
+
+          &.sub-heading {
+            margin: 0;
+            color: var(--blue);
+            font-weight: bold;
+          }
+        }
+      }
+
+      .cta-reasons {
+        ul {
+          list-style-type: none;
+          padding: 0;
+
+          li {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            margin-bottom: var(--space-sm);
+          }
+
+          .icon {
+            margin-right: var(--space-md);
+            min-width: var(--space-md);
+            min-height: var(--space-md);
+            color: green;
+          }
+        }
+      }
+    }
+
+    .cta-reasons {
+      ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          display: flex;
+          width: 100%;
+          font-weight: bold;
+          align-items: center;
+          margin-bottom: var(--space-sm);
+        }
+
+        .icon {
+          margin-right: var(--space-sm);
+          min-width: var(--space-md);
+          min-height: var(--space-md);
+          color: green;
+        }
+      }
+    }
+    .cta-content {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: start;
+
+      h2 {
+        font-weight: bold;
+        font-size: var(--text-xxl);
+        margin-top: var(--space-xxs);
+        padding: 0;
+      }
+
+      p {
+        font-size: var(--text);
+        margin-top: var(--space-md);
+
+        &.sub-heading {
+          margin: 0;
+          color: var(--blue);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    padding-bottom: var(--space-xl);
+  }
+</style>
+
+<section class="grey">
+  <div class="container">
+    <div class="grid">
+      <div class="cta-reasons">
+        <ul>
+          <li><Icon class="icon" name="ic:check" />No Credit Pull.</li>
+          <li><Icon class="icon" name="ic:check" />Short Phone Call or Fully Online.</li>
+          <li><Icon class="icon" name="ic:check" />No annoying spam.</li>
+          <li><Icon class="icon" name="ic:check" />Strategies for any stage of the process.</li>
+        </ul>
+      </div>
+      <div class="cta-content">
+        <p class="sub-heading">100% <u>Free</u> and no obligation</p>
+        <h2>Get Your Home Buying Options Today.</h2>
+        <p class="sub-title">We're excited to help wether it's your first or fourth home.</p>
+      </div>
+    </div>
+    <div class="button-wrapper">
+      <DadJoke client:visible />
+    </div>
+  </div>
+</section>

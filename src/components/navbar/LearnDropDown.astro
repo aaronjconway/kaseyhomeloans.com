@@ -1,0 +1,169 @@
+---
+import Dropdown from '@/components/navbar/Dropdown.astro';
+import DropdownItems from './DropdownItems.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<style lang="scss">
+  @use '../../styles/base.scss';
+
+  a {
+    &:hover {
+      color: var(--dark-blue);
+      transition: all ease-in-out 100ms;
+    }
+
+    &:not(:hover) {
+      color: var(--ink);
+      transition: all ease-in-out 100ms;
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    background: unset !important;
+  }
+
+  .dropdown-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    .right {
+      background: var(--light-grey);
+
+      li {
+        background: unset !important;
+      }
+    }
+
+    &-item {
+      padding: var(--space-md);
+    }
+  }
+  @media (max-width: base.$lg) {
+    .dropdown-grid {
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        padding: var(--space-md) 0;
+      }
+    }
+  }
+
+  .heading-wrapper {
+    display: flex;
+    margin-bottom: var(--space-md);
+    .icon-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      background: var(--light-blue);
+      margin-right: var(--space-sm);
+      height: 40px;
+      width: 40px;
+    }
+
+    .icon {
+      color: var(--blue);
+      height: 75%;
+      width: 75%;
+    }
+
+    h3 {
+      font-size: var(--text);
+      color: var(--dark-blue);
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      font-size: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      display: flex;
+      align-items: center;
+      padding: var(--space-xxs);
+      border-radius: 3px;
+      width: 100%;
+
+      .icon {
+        margin-right: var(--space-xxs);
+      }
+
+      &:hover {
+        background: var(--light-blue);
+      }
+    }
+  }
+
+  hr {
+    background: lightgrey;
+    width: 100%;
+    margin-bottom: var(--space-md);
+  }
+
+  .links {
+    display: flex;
+    gap: var(--space-lg);
+  }
+</style>
+<li>
+  <Dropdown>
+    <button>
+      <span>Tools & Education</span>
+    </button>
+    <DropdownItems class:list={['dropdown-container']}>
+      <div class="dropdown-grid">
+        <div class="dropdown-grid-item">
+          <div class="heading-wrapper">
+            <div class="icon-wrapper">
+              <Icon class="icon" name="ic:twotone-book" />
+            </div>
+            <div class="heading">
+              <h3>Home Buying Education</h3>
+              <p>Transparent and accurate advice.</p>
+            </div>
+          </div>
+          <hr />
+
+          <div class="links">
+            <ul>
+              <li class="title">Resources</li>
+              <li><a href="/blog">Blog & Market Updates</a></li>
+              <li><a href="/Our Team">Home Buying Guides</a></li>
+            </ul>
+
+            <ul>
+              <li class="title">Tools</li>
+              <li><a href="/licensing">Calculators</a></li>
+              <li><a href="/privacy-policy">Property Tools</a></li>
+              <li><a href="/technology"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="dropdown-grid-item right">
+          <ul>
+            <li>
+              <!-- todo make sure you check rel=nofollow-->
+              <Icon class="icon" name="ic:twotone-house" />
+              <a rel="nofollow" href=""><span>First time home buyers guide</span></a>
+            </li>
+            <li>
+              <Icon class="icon" name="ic:twotone-percent" />
+              <a rel="nofollow" href=""><span>How to shop mortgage rates?</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </DropdownItems>
+  </Dropdown>
+</li>

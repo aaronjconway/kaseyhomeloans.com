@@ -1,0 +1,64 @@
+---
+import Slider from '../svelte/review_slider.svelte';
+//not a huge fan of the naming of "slider". move into this one.
+// I kno we're already using svelte but could we do this in pure js?
+---
+
+<style lang="scss">
+  @use '../../styles/_base.scss';
+
+  h2 {
+    margin: 0rem;
+    padding: 0rem;
+  }
+
+  p {
+    font-size: var(--text);
+    margin-top: var(--space-sm);
+  }
+
+  .sub-heading {
+    color: var(--blue);
+    font-weight: bold;
+    padding-bottom: var(--space-xs);
+    margin: 0rem;
+  }
+
+  .testimonial {
+    font-size: var(--text-xl);
+  }
+
+  .author {
+    margin-top: var(--space-sm);
+  }
+
+  .wrapper {
+    display: grid;
+    //temp while testing. set back to 1fr 1fr for original and delete text-align
+    text-align: center;
+    grid-template-columns: 1fr;
+
+    @media (max-width: base.$lg) {
+      display: block;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
+
+<section>
+  <div class="container">
+    <div class="wrapper">
+      <div class="heading">
+        <div class="sub-heading">Testimonials</div>
+        <h2>See what our clients say</h2>
+      </div>
+      <Slider client:visible />
+    </div>
+  </div>
+</section>

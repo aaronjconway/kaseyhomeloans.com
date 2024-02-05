@@ -14,8 +14,13 @@
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.4",
     "@astrojs/svelte": "^5.0.3",
+    "@iconify-json/devicon": "^1.1.35",
+    "@iconify-json/ic": "^1.1.17",
+    "@iconify-json/openmoji": "^1.1.46",
+    "@splidejs/svelte-splide": "^0.2.9",
     "astro": "^4.1.1",
     "astro-icon": "^1.0.4",
+    "sharp": "^0.33.2",
     "svelte": "^4.2.9"
   },
   "devDependencies": {
@@ -25,7 +30,7 @@
     "postcss": "^8.4.32",
     "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.13.0",
-    "sass": "^1.69.7",
+    "sass": "^1.70.0",
     "typescript": "5.3.3"
   }
 }

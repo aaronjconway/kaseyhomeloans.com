@@ -33,6 +33,7 @@ $xxl: 1536px; //big ass computers over this size
   --green: #0F5257; //midnight green
 
   --light-blue: #e0f1ff;
+  --dark-blue: #43486E;
   --blue: #376EB1; //amex blue
 
   --dark-blue: #1C2352;
@@ -40,10 +41,11 @@ $xxl: 1536px; //big ass computers over this size
   --thistle: #C6B9CD; //thistle
   --lavender: #D6D3F0; //lavender
 
-  --light-grey: #fbfafa;
+  --light-grey: #f4f4f4;
   --mid-grey: #A3ABBD;
+  --grey: #696e7a;
 
-  --ink: #333;
+  --ink: #444;
   --paper: #ffffff;
   --background-color: #FFFFFF;
   --link-color: #005fb9;
@@ -58,4 +60,10 @@ $xxl: 1536px; //big ass computers over this size
     background-color: var(--paper);
   }
 
+  .joke-wrapper {
+    a {
+      text-decoration: underline;
+      color: var(--link-color)
+    }
+  }
 }

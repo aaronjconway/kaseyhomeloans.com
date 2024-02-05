@@ -1,9 +1,9 @@
 ---
-import Dropdown from './dropdown_menu.astro';
+import CompanyDropDown from '@/components/navbar/CompanyDropDown.astro';
+import LearnDropDown from '@/components/navbar/LearnDropDown.astro';
 import Astronav from '@/components/navbar/Astronav.astro';
 import MenuItems from '@/components/navbar/MenuItems.astro';
 import Hamburger from '@/components/navbar/Hamburger.astro';
-import { menu_links } from '@/lib/data/menu.json';
 import Logo from '../Logo.astro';
 ---
 
@@ -17,25 +17,17 @@ import Logo from '../Logo.astro';
       <MenuItems class="menu-items hidden">
         <div class="nav-wrapper">
           <ul class="nav-link-container">
-            {
-              menu_links.map((item) => (
-                <>
-                  {item.children && <Dropdown title={item.name} children={item.children} />}
-
-                  {!item.children && (
-                    <li>
-                      <a href={item.url} class="nav-link">
-                        <span> {item.name}</span>
-                      </a>
-                    </li>
-                  )}
-                </>
-              ))
-            }
+            <CompanyDropDown />
+            <LearnDropDown />
+            <li>
+              <a>
+                <span>test</span>
+              </a>
+            </li>
           </ul>
           <div class="nav-cta">
             <!-- todo add correct lin -->
-            <a href="/" class="btn">Get More Info</a>
+            <a href="/" class="btn">Request Quote</a>
           </div>
         </div>
       </MenuItems>

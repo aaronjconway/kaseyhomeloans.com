@@ -1,19 +1,18 @@
 ---
-import Pagination from "@/components/Pagination.astro";
+import Pagination from '@/components/Pagination.astro';
+import PostPreview from '@/components/PostPreview.astro';
+import TopPosts from '@/components/TopPosts.astro';
+import Layout from '@/layouts/Layout.astro';
 
-import Layout from "@/layouts/Layout.astro";
+import PostSidebar from '@/components/PostSidebar.astro';
 
-import PostSidebar from "@/components/PostSidebar.astro";
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
+const posts = await getCollection('blog');
 
-const BLOG_FOLDER = "blog";
-
-
-const posts = await getCollection('blog')
-
+const topPosts = posts.slice(0, 4);
 ---
 
-<Layout title={"Blog"} image={""} description={"the khl blog"}>
+<Layout title={'Blog'} image={''} description={'the khl blog'}>
   <style lang="scss">
     .blog-wrapper {
       display: grid;
@@ -33,17 +32,8 @@ const posts = await getCollection('blog')
   <!-- <PageHeader title={postIndex.data.title} /> -->
   <section class="section">
     <div class="container">
-      <div class="blog-wrapper">
-        <!-- blog posts -->
-        <div class="blog posts">
-          <div class="row">
-            {
-              posts.map((post) => <div>{post.id}</div>
-              )
-            }
-          </div>
-        </div>
-
+      <div class="top-posts-wrapper">
+        <TopPosts posts={topPosts} />
       </div>
     </div>
   </section>

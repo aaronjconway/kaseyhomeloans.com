@@ -5,62 +5,55 @@
       "url": "e"
     },
     {
-      "name": "About",
+      "name": "Company",
+      "title": "About Kasey Home Loans",
+      "description": "Making home ownership simple.",
       "url": "",
       "hasChildren": true,
       "children": [
         {
-          "name": "About Us",
-          "url": "/about"
+          "title": "Company",
+          "links": [
+            {
+              "name": "About",
+              "link": "/about"
+            },
+            {
+              "name": "Licensing",
+              "link": "/licensing"
+            },
+            {
+              "name": "Texas Compliance Notice",
+              "link": "/texas-compliance"
+            },
+            {
+              "name": "Texas Compliance Notice",
+              "link": "/texas-compliance"
+            }
+          ]
         },
         {
-          "name": "Our Team",
-          "url": "/authors"
-        },
-        {
-          "name": "Licensing",
-          "url": "/licensing"
-        },
-        {
-          "name": "Technolgy",
-          "url": "/technology"
+          "title": "Resources",
+          "links": [
+            {
+              "name": "Support",
+              "link": "/support"
+            },
+            {
+              "name": "Support",
+              "link": "/support"
+            },
+            {
+              "name": "Support",
+              "link": "/support"
+            }
+          ]
         }
       ]
     },
     {
       "name": "Style Guide",
       "url": "/style-guide"
-    },
-    {
-      "name": "Learn",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "Contact",
-          "url": "/contact"
-        },
-        {
-          "name": "Blog",
-          "url": "/blog"
-        },
-        {
-          "name": "Authors",
-          "url": "/authors"
-        },
-        {
-          "name": "Categories",
-          "url": "/categories"
-        },
-        {
-          "name": "Tags",
-          "url": "/tags"
-        },
-        {
-          "name": "404 Page",
-          "url": "/404"
-        }
-      ]
     }
   ]
 }

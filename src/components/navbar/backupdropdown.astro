@@ -1,0 +1,46 @@
+---
+import Dropdown from '@/components/navbar/Dropdown.astro';
+import DropdownItems from './DropdownItems.astro';
+const { title, children } = Astro.props;
+---
+
+<style>
+  .dropdown-item-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  ul {
+    padding: var(--space-sm);
+
+    li {
+      padding: var(--space-xxs) 0 !important;
+    }
+
+    li.title {
+      color: red;
+      margin-bottom: var(--space-xs);
+    }
+  }
+</style>
+<li>
+  <Dropdown>
+    <button>
+      <span>{title} </span>
+    </button>
+    <DropdownItems class:list={['dropdown-container']}>
+      <div class="dropdown-item-wrapper">
+        {
+          children.map((item: any) => (
+            <ul>
+              <li class="title">{item.title}</li>
+              {item.links?.map((link: any) => (
+                <li>{link.name}</li>
+              ))}
+            </ul>
+          ))
+        }
+      </div>
+    </DropdownItems>
+  </Dropdown>
+</li>

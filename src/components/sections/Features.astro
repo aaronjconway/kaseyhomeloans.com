@@ -1,5 +1,6 @@
 ---
 //init
+import { Icon } from 'astro-icon/components';
 ---
 
 <style lang="scss">
@@ -30,23 +31,49 @@
   }
 
   .features-grid {
+    margin-top: var(--space-xl);
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    @media (min-width: base.$md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: base.$lg) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     gap: var(--space-xl);
 
     .feature {
-      margin-top: var(--space-xl);
-      grid-column: span 1;
+      display: flex;
 
-      .heading {
-        font-size: var(--text-md);
-        font-weight: bold;
+      .feature-content {
+        text-align: left;
+        justify-content: start;
+        .heading {
+          font-size: var(--text-md);
+          font-weight: bold;
+        }
+
+        .content {
+          display: flex;
+          margin-top: var(--space-sm);
+          text-align: left;
+        }
+
+        .sub-heading {
+          color: var(--blue);
+          font-weight: bold;
+          padding: var(--space-xs) 0;
+          margin: 0rem;
+        }
       }
 
-      .content {
-        display: flex;
-        margin-top: var(--space-sm);
-        text-align: left;
+      .icon {
+        min-width: var(--space-xl);
+        min-height: var(--space-xl);
+        padding-right: 10px;
       }
     }
   }
@@ -55,30 +82,72 @@
 <section class="">
   <div class="container">
     <div class="feature-content">
-      <p class="sub-heading">Benefits</p>
-      <h2>Why work with us?</h2>
-      <p class="subtitle">Mollis eros augue at est. Class aptent taciti sociosqu ad litora.</p>
+      <p class="sub-heading">Why work with us?</p>
+      <h2>The Home Buying Benefits You Deserve</h2>
+      <p class="subtitle">Accept nothing less.</p>
     </div>
     <div class="features-grid">
       <div class="feature">
-        <div class="heading">Knowlege</div>
-        <div class="content">
-          Neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc faucibus
-          posuere turpis. Sed laoreet, est sed gravida.
+        <Icon class="icon" name="openmoji:magnifying-glass-tilted-right" />
+        <div class="feature-content">
+          <div class="heading">Transparent</div>
+          <div class="sub-heading">{`No sales bologna`}</div>
+          <div class="content">
+            We are always honest and upfront about our fee's and the options that are in your best interest.
+          </div>
         </div>
       </div>
       <div class="feature">
-        <div class="heading">Transparency</div>
-        <div class="content">
-          Neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc faucibus
-          posuere turpis. Sed laoreet, est sed gravida.
+        <Icon class="icon" name="openmoji:dollar-banknote" />
+        <div class="feature-content">
+          <div class="heading">Pricing</div>
+          <div class="sub-heading">{`$5,392 on average saved`}</div>
+          <div class="content">
+            Our low overhead allows us to provide extremely competitive pricing. Read more about it here.
+          </div>
         </div>
       </div>
       <div class="feature">
-        <div class="heading">Speed</div>
-        <div class="content">
-          Neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc faucibus
-          posuere turpis. Sed laoreet, est sed gravida.
+        <Icon class="icon" name="openmoji:rocket" />
+        <div class="feature-content">
+          <div class="heading">Speed</div>
+          <div class="sub-heading">{`< 3 weeks to close on average`}</div>
+          <div class="content">
+            Our weekend availability and underwriting speed allow you to make your home offer more attractive to
+            sellers.
+          </div>
+        </div>
+      </div>
+      <div class="feature">
+        <Icon class="icon" name="openmoji:check-mark-button" />
+        <div class="feature-content">
+          <div class="heading">Simple</div>
+          <div class="sub-heading">{`Easy to use online application`}</div>
+          <div class="content">
+            Our streamlined online application makes it incredibly easy to sign documents and check your loan status.
+          </div>
+        </div>
+      </div>
+      <div class="feature">
+        <Icon class="icon" name="openmoji:mobile-info" />
+        <div class="feature-content">
+          <div class="heading">Communication</div>
+          <div class="sub-heading">{`Available on weekends`}</div>
+          <div class="content">
+            We're educational, patient and readily accesible when you need it - from hand holding to high level
+            technical analysis.
+          </div>
+        </div>
+      </div>
+      <div class="feature">
+        <Icon class="icon" name="openmoji:light-bulb" />
+        <div class="feature-content">
+          <div class="heading">Knowledge</div>
+          <div class="sub-heading">{`Highly experienced`}</div>
+          <div class="content">
+            Our guidline knowlege will give you confidence even on the trickiest of situations. We routinely find
+            solutions others don't.
+          </div>
         </div>
       </div>
     </div>

@@ -1,25 +1,22 @@
 ---
-import type { GetStaticPaths } from "astro";
-import Layout from "@/layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
 
-export  const  getStaticPaths  =  (() => {
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map((page) => ({
+    params: { page: page.slug },
+    props: { page },
+  }));
+}
 
-const pages =  getCollection('pages')
-
-console.log(pages)
-  return [];
-}) satisfies GetStaticPaths;
-
-
-
-const {pathname} =  Astro.url
-
-console.log(pathname)
+const { page } = Astro.props;
+console.log(page);
+const { Content } = await page.render();
 ---
 
-
-<Layout title = 'test' image = '' description = ''>
-  <div>this is an additional page on the / route</div>
+<Layout title="test" description="test" image="test">
+  <div class="container">
+    <Content />
+  </div>
 </Layout>
-

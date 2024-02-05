@@ -1,0 +1,174 @@
+---
+import Dropdown from '@/components/navbar/Dropdown.astro';
+import DropdownItems from './DropdownItems.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<style lang="scss">
+  @use '../../styles/base.scss';
+
+  a {
+    &:hover {
+      color: var(--dark-blue);
+      transition: all ease-in-out 100ms;
+    }
+
+    &:not(:hover) {
+      color: var(--ink);
+      transition: all ease-in-out 100ms;
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    background: unset !important;
+  }
+
+  .dropdown-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    .right {
+      background: var(--light-grey);
+
+      li {
+        background: unset !important;
+      }
+    }
+
+    &-item {
+      padding: var(--space-md);
+    }
+  }
+  @media (max-width: base.$lg) {
+    .dropdown-grid {
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        padding: var(--space-md) 0;
+      }
+    }
+  }
+
+  .heading-wrapper {
+    display: flex;
+    margin-bottom: var(--space-md);
+    .icon-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      background: var(--light-blue);
+      margin-right: var(--space-sm);
+      height: 40px;
+      width: 40px;
+    }
+
+    .icon {
+      color: var(--blue);
+      height: 75%;
+      width: 75%;
+    }
+
+    h3 {
+      font-size: var(--text);
+      color: var(--dark-blue);
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      font-size: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      display: flex;
+      align-items: center;
+      padding: var(--space-xxs);
+      border-radius: 3px;
+      width: 100%;
+
+      .icon {
+        margin-right: var(--space-xxs);
+      }
+
+      &:hover {
+        background: var(--light-blue);
+      }
+    }
+  }
+
+  hr {
+    background: lightgrey;
+    width: 100%;
+    margin-bottom: var(--space-md);
+  }
+
+  .links {
+    display: flex;
+    gap: var(--space-lg);
+  }
+</style>
+<li>
+  <Dropdown>
+    <button>
+      <span>Company</span>
+    </button>
+    <DropdownItems class:list={['dropdown-container']}>
+      <div class="dropdown-grid">
+        <div class="dropdown-grid-item">
+          <div class="heading-wrapper">
+            <div class="icon-wrapper">
+              <Icon class="icon" name="ic:twotone-book" />
+            </div>
+            <div class="heading">
+              <h3>About | Kasey Home Loans</h3>
+              <p>Structured for efficiency</p>
+            </div>
+          </div>
+          <hr />
+
+          <div class="links">
+            <ul>
+              <li class="title">Company</li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/Our Team">Our Team</a></li>
+              <li><a href="/faq">FAQs</a></li>
+              <li><a href="/partner">Partner with Us</a></li>
+            </ul>
+
+            <ul>
+              <li class="title">Compliance</li>
+              <li><a href="/licensing">Licensing</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/technology">Technology</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="dropdown-grid-item right">
+          <ul>
+            <li>
+              <Icon class="icon" name="openmoji:facebook" />
+              <a rel="nofollow" href=""><span>Facebook</span></a>
+            </li>
+            <li>
+              <Icon class="icon" name="openmoji:twitter" />
+              <a rel="nofollow" href=""><span>Twitter</span></a>
+            </li>
+            <li>
+              <Icon class="icon" name="openmoji:youtube" />
+              <a rel="nofollow" href=""><span>Youtube</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </DropdownItems>
+  </Dropdown>
+</li>

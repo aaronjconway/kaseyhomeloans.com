@@ -1,0 +1,140 @@
+@use "base.scss";
+
+
+@media(max-width: base.$lg) {
+
+	.splide__arrow {
+		height: 1.5em;
+		-ms-flex-pack: center;
+		justify-content: center;
+		padding: 0;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 1.5em;
+		z-index: 1;
+	}
+
+	.splide__arrow svg {
+		height: 1.5rem;
+		width: 1.5rem;
+		transition: fill 0.2s linear;
+	}
+
+	.splide__arrow:disabled {
+		opacity: 0.3;
+	}
+
+	.splide__arrow--prev {
+		left: 0em;
+	}
+
+	.splide__arrow--prev svg {
+		transform: scaleX(-1);
+	}
+
+	.splide__arrow--next {
+		right: 0em;
+	}
+
+}
+
+//------------------------------------------- End of mobile
+
+
+.splide__arrow {
+	-ms-flex-align: center;
+	align-items: center;
+	border: 0;
+	border-radius: 0;
+	cursor: pointer;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	justify-content: center;
+	padding: 0;
+	position: absolute;
+	top: 42%;
+	z-index: 1;
+	background: transparent;
+}
+
+.splide__arrow:disabled {
+	opacity: 0.3;
+}
+
+.splide__arrow--prev {
+	left: -1rem;
+}
+
+.splide__arrow--next {
+	right: -1rem;
+}
+
+.splide__arrow--prev svg {
+	transform: scaleX(-1);
+}
+
+.splide__list {
+	display: flex;
+	margin: 2em 0;
+	padding: 0em
+}
+
+.splide__pagination {
+	display: none;
+}
+
+.splide {
+	position: relative;
+	padding: 0rem;
+	margin: 0rem;
+}
+
+.splide__slide {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	width: 100%;
+	list-style-type: none !important;
+	position: relative;
+	padding: 0;
+	margin: 0;
+
+}
+
+
+.splide__sr {
+	clip: rect(0 0 0 0);
+	border: 0;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.splide__track {
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+}
+
+.splide__track--draggable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+// .splide__track--fade > .splide__list > .splide__slide {
+// 	margin: 0 !important;
+// 	padding: 0;
+// 	opacity: 0;
+// 	z-index: 0;
+// }
+
+.splide--rtl {
+	direction: rtl;
+}
