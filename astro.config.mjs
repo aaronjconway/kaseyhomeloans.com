@@ -1,7 +1,7 @@
 //todo what is squoosh
 import mdx from "@astrojs/mdx";
 import svelte from "@astrojs/svelte";
-import sitemap from "@astrojs/sitemap";
+// import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
 //todo: vimportant for production. make sure to only include the icons that are necessary
@@ -13,6 +13,6 @@ export default defineConfig({
   output: "hybrid",
   integrations: [svelte(), sitemap(), mdx(), icon()],
   adapter: cloudflare({
-    imageService: 'cloudflare'
+    imageService: 'compile'
   })
 });
