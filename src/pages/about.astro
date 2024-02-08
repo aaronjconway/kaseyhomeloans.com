@@ -4,9 +4,8 @@ import SimpleCTA from '@/components/sections/simple-cta.astro';
 
 import supabase from '../lib/supabase.ts';
 
-const { data: employees, error } = await supabase.from('employees').select('id');
-
-console.log(employees, error);
+const { data: employees, error } = await supabase.from('employees').select('*');
+console.log(employees);
 ---
 
 <style>
@@ -42,6 +41,10 @@ console.log(employees, error);
 >
   <div class="heading-wrapper compressed container">
     <h1>About Us</h1>
+    <div class="test-wrapper">
+      here we are testing supabase
+      <div class="test">{employees}</div>
+    </div>
     <hr />
     <div class="sub-heading center">High level professionals for superior home buying experience.</div>
     <h2>Who We Are</h2>

@@ -11,7 +11,7 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   base: "/",
   output: "hybrid",
-  integrations: [svelte(), sitemap(), mdx(), icon()],
+  integrations: [svelte(), /* sitemap() */, mdx(), icon()],
   adapter: cloudflare({
     imageService: 'compile'
   })
