@@ -3,7 +3,7 @@ title: "How to build an Application with modern Technology"
 meta_title: ""
 description: "this is meta description"
 date: 2022-04-04T05:00:00Z
-image: "post-4.jpg"
+image: "image_6.jpg"
 categories: ["Architecture"]
 author: "John Doe"
 tags: ["silicon", "technology"]

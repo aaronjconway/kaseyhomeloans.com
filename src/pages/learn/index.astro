@@ -1,0 +1,70 @@
+---
+import Pagination from '@/components/Pagination.astro';
+import PostPreview from '@/components/PostPreview.astro';
+import TopPosts from '@/components/TopPosts.astro';
+import Layout from '@/layouts/Layout.astro';
+import LearnBanner from '@/components/sections/LearnBanner.astro';
+import LearnCalltoAction from '@/components/sections/LearnCalltoAction.astro';
+
+import PostSidebar from '@/components/PostSidebar.astro';
+
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('learn');
+
+// sort posts by date
+posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const topPosts = posts.slice(0, 4);
+---
+
+<Layout title={'Learning Center'} image={'todo'} description={'todo'}>
+  <style lang="scss">
+    .learn-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      width: 100%;
+    }
+
+    .side-bar {
+      display: flex;
+      flex-direction: col;
+      position: fixed;
+      background: red;
+      border: 1px solid blue;
+    }
+
+    .sub-heading {
+      color: var(--blue);
+      font-weight: bold;
+      padding-bottom: var(--space-xs);
+      margin: 0rem;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+  </style>
+
+  <!-- <PageHeader title={postIndex.data.title} /> -->
+  <section>
+    <div class="container">
+      <div class="sub-heading">Accurate & honest advice</div>
+      <h1>Transparent Home Buying Education</h1>
+      <p>
+        Finding high quality home buying information online can be incredibly difficult. We take pride in writing and
+        maintaing these articles to provide you with a true insight into the home buying process. Nobody likes an
+        emotional rollercoster.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="top-posts-wrapper">
+        <TopPosts posts={topPosts} />
+      </div>
+    </div>
+  </section>
+  <LearnBanner />
+  <LearnCalltoAction />
+</Layout>

@@ -7,6 +7,11 @@ import Hamburger from '@/components/navbar/Hamburger.astro';
 import Logo from '../Logo.astro';
 ---
 
+<style>
+  a {
+    text-decoration: none;
+  }
+</style>
 <div class="container">
   <header>
     <Astronav>
@@ -19,11 +24,6 @@ import Logo from '../Logo.astro';
           <ul class="nav-link-container">
             <CompanyDropDown />
             <LearnDropDown />
-            <li>
-              <a>
-                <span>test</span>
-              </a>
-            </li>
           </ul>
           <div class="nav-cta">
             <!-- todo add correct lin -->

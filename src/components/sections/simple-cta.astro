@@ -1,0 +1,45 @@
+---
+//
+---
+
+<style lang="scss">
+  @use '../../styles/_base.scss';
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-md);
+
+    h2 {
+      font-weight: bold;
+      font-size: var(--text-xxl);
+      margin-top: var(--space-xs);
+    }
+
+    p {
+      font-size: var(--text);
+
+      margin-top: var(--space-md);
+      &.sub-heading {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .button-wrapper {
+    margin-top: var(--space-md);
+    display: flex;
+  }
+</style>
+
+<section class="grey">
+  <div class="wrapper">
+    <div class="sub-heading">100% <u>Free</u> and no obligation</div>
+    <h2>Get started on your path to the perfect mortgage.</h2>
+    <p class="sub-title">Apply online to receive <u>same day</u> expert advice, rates and programs.</p>
+    <div class="button-wrapper">
+      <a href="/" class="btn">Request More Info</a>
+    </div>
+  </div>
+</section>

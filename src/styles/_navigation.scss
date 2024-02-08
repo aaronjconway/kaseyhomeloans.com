@@ -1,7 +1,5 @@
 @use 'base.scss';
 
-
-
 header {
   white-space: nowrap;
   padding: var(--space-md) 0;
@@ -78,6 +76,7 @@ ul.nav-link-container {
   li,
   button {
     color: var(--ink);
+    text-decoration: none;
     list-style: none;
     background: none;
     border: none;
@@ -117,7 +116,7 @@ ul.nav-link-container {
     display: flex;
     width: auto;
     margin: var(--space-md) -20rem;
-    border: 1px solid var(--light-grey);
+    border: 1px solid #e8e8e8;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
     border-radius: 3px;
     position: absolute;

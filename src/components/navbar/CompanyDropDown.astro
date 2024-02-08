@@ -7,10 +7,18 @@ import { Icon } from 'astro-icon/components';
 <style lang="scss">
   @use '../../styles/base.scss';
 
-  a {
+  a.list {
+    display: block;
+    align-items: center;
+    margin-left: -4px;
+    padding: var(--space-xxs);
+    border-radius: 4px;
+    width: 100%;
+
     &:hover {
       color: var(--dark-blue);
       transition: all ease-in-out 100ms;
+      background: var(--light-blue);
     }
 
     &:not(:hover) {
@@ -22,6 +30,7 @@ import { Icon } from 'astro-icon/components';
   .title {
     font-weight: bold;
     background: unset !important;
+    margin-bottom: var(--space-sm);
   }
 
   .dropdown-grid {
@@ -33,6 +42,7 @@ import { Icon } from 'astro-icon/components';
 
       li {
         background: unset !important;
+        margin: var(--space-sm) 0;
       }
     }
 
@@ -89,18 +99,8 @@ import { Icon } from 'astro-icon/components';
     padding: 0;
     margin: 0;
     li {
-      display: flex;
-      align-items: center;
-      padding: var(--space-xxs);
-      border-radius: 3px;
-      width: 100%;
-
       .icon {
         margin-right: var(--space-xxs);
-      }
-
-      &:hover {
-        background: var(--light-blue);
       }
     }
   }
@@ -138,17 +138,16 @@ import { Icon } from 'astro-icon/components';
           <div class="links">
             <ul>
               <li class="title">Company</li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/Our Team">Our Team</a></li>
-              <li><a href="/faq">FAQs</a></li>
-              <li><a href="/partner">Partner with Us</a></li>
+              <li><a class="list" href="/about">About</a></li>
+              <li><a class="list" href="/faq">FAQs</a></li>
+              <!-- <li><a class="list" href="/partner">Partner with Us</a></li> -->
             </ul>
 
             <ul>
               <li class="title">Compliance</li>
-              <li><a href="/licensing">Licensing</a></li>
-              <li><a href="/privacy-policy">Privacy Policy</a></li>
-              <li><a href="/technology">Technology</a></li>
+              <li><a class="list" href="/licensing">Licensing</a></li>
+              <li><a class="list" href="/privacy-policy">Privacy Policy</a></li>
+              <li><a class="list" href="/technology">Technology</a></li>
             </ul>
           </div>
         </div>

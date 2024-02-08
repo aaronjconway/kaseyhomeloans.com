@@ -1,0 +1,111 @@
+@use 'base.scss';
+
+// section style
+//colors
+
+section {
+  margin: var(--space-xl) 0;
+
+  // for the styleguide page to show the section colors
+  &.display {
+    min-height: 20vh;
+  }
+
+  &.green {
+    background: var(--light-green);
+  }
+
+  &.blue {
+    background: var(--light-blue);
+  }
+
+  &.grey {
+    background: var(--light-grey)
+  }
+
+  &.dark-blue {
+    background: var(--blue)
+  }
+
+  a {
+
+    &.silent {
+      color: var(--ink);
+      text-decoration: none
+    }
+
+    &:visited {
+      color: transparent
+    }
+  }
+}
+
+// container
+.container {
+  max-width: $xl;
+  padding: 0 5%;
+  margin: 0 auto;
+
+  @media (max-width:$md) {
+    padding: 0 3%;
+  }
+}
+
+
+hr {
+  border: none;
+  height: 1px;
+}
+
+hr.light {
+  background: #d1d1d1;
+}
+
+//the blue secondary heading
+.sub-heading {
+  color: var(--blue);
+  font-weight: bold;
+  margin: 0rem;
+}
+
+.center {
+  text-align: center;
+}
+
+
+.compressed {
+  @media (min-width:$lg) {
+    max-width: 50%;
+  }
+}
+
+a {
+
+  &.silent {
+    color: var(--ink);
+    text-decoration: none
+  }
+
+  &:visited {
+    color: var(--blue);
+
+  }
+
+}
+
+.note {
+  background: var(--light-blue);
+  padding: var(--space-md);
+  margin: var(--space-lg) 0;
+
+  &:before {
+    content: 'Side Note:';
+    font-weight: bold;
+    margin-right: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    font-size: var(--text-sm);
+    display: block;
+    line-height: 1;
+  }
+}

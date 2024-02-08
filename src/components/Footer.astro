@@ -7,9 +7,9 @@ const footerData = {
       title: 'Kasey Home Loans',
       links: [
         { text: 'Buy a Home', href: '#' },
+        { text: 'Refinance', href: '#' },
         { text: 'FAQs', href: '#' },
         { text: 'Loan Options', href: '#' },
-        { text: 'Partners', href: '#' },
         { text: 'Rates', href: '#' },
         { text: 'Refinance', href: '#' },
       ],
@@ -50,11 +50,12 @@ const footerData = {
 const { socialLinks, links, footNote } = footerData;
 ---
 
-<style>
+<style lang="scss">
   footer {
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-color: slategray;
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
 
     ul {
       padding-left: 0;
@@ -116,11 +117,13 @@ const { socialLinks, links, footNote } = footerData;
   hr {
     margin-top: var(--space-md);
     background: var(--mid-grey);
+    height: 1px;
   }
 </style>
 
 <footer>
   <div class="container">
+    <hr />
     <div class="footer-content">
       <div class="footer-column logo">
         <div class="logo">

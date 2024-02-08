@@ -1,5 +1,5 @@
 ---
-//
+const { content } = Astro.props;
 ---
 
 <style lang="scss">
@@ -20,6 +20,6 @@
 
 <section class="blue">
   <div class="container">
-    <div class="contents">Ask about our exclusive <i>First Time Home Buyer</i> program</div>
+    <div class="contents"><span set:html={content} /></div>
   </div>
 </section>

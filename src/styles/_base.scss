@@ -1,3 +1,6 @@
+//I feel like we should rename this colors.scss and move some of the other stuff
+//todo: should probably also rename layouts to common
+
 $sm: 640px; // phone
 $md: 768px; //tablets?
 $lg: 1024px; //idk
@@ -42,6 +45,7 @@ $xxl: 1536px; //big ass computers over this size
   --lavender: #D6D3F0; //lavender
 
   --light-grey: #f4f4f4;
+  --border-grey: #e8e8e8;
   --mid-grey: #A3ABBD;
   --grey: #696e7a;
 

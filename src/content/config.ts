@@ -1,17 +1,17 @@
-//tood: make a meta collection
-
 import { defineCollection, z } from "astro:content";
 
-// Post collection schema
-const blogCollection = defineCollection({
+//pages in the learn content folder = equivalent to blog
+const learnCollection = defineCollection({
   schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    date: z.date().optional(),
-    image: z.string().optional(),
-    author: z.string().default("Admin"),
-    categories: z.array(z.string()).default(["others"]),
-    tags: z.array(z.string()).default(["others"]),
+
+    //testing lengt
+    title: z.string().max(50),
+    description: z.string().max(70),
+    date: z.coerce.date(),
+    image: z.string(),
+    author: z.string(),
+    categories: z.array(z.string()).default(["Misc"]),
+    tags: z.array(z.string()).default(["Misc"]),
     draft: z.boolean().optional(),
   }),
 });
@@ -51,7 +51,7 @@ const pagesCollection = defineCollection({
 
 // Export collections
 export const collections = {
-  blog: blogCollection,
+  learn: learnCollection,
   authors: authorsCollection,
   pages: pagesCollection,
 };

@@ -4,25 +4,75 @@ import { Image } from 'astro:assets';
 import FormattedDate from './FormattedDate.astro';
 
 const { posts } = Astro.props;
-
+//pop off the first post
 const firstPost = posts.shift();
 
-console.log(posts);
+interface Post {
+  id: string;
+  slug: string;
+  body: string;
+  collection: string;
+  data: {
+    title: string;
+    description: string;
+    date: Date;
+    image: string;
+    author: string;
+    categories: string[];
+    tags: string[];
+    draft: boolean;
+  };
+  render: () => Promise<void>;
+}
 
 const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*');
 ---
 
-<style>
+<style lang="scss">
+  @use '../styles/_base.scss';
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  hr {
+    margin: var(--space-lg) 0;
+    background-color: var(--mid-grey);
+    width: 100%;
+  }
+
   .wrapper {
     width: 100%;
     display: grid;
+    height: 100%;
     grid-template-columns: 1fr;
+
+    @media (min-width: base.$lg) {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+
+      .first-post-wrapper {
+        margin: 0;
+      }
+
+      .small-post-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: calc(-1 * 2rem);
+      }
+      .small-post {
+        margin: var(--space-sm);
+        padding: var(--space-sm);
+      }
+    }
   }
 
   .first-post-wrapper {
-    height: 75%;
+    margin-bottom: var(--space-md);
   }
 
+  //only applies to first post
   .image-wrapper {
     display: flex;
     justify-content: center;
@@ -31,20 +81,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
     overflow: hidden;
     margin: 0;
     padding: 0;
-  }
-
-  .small-image-wrapper {
-    display: flex;
-    border:1px solid;
-    border-radius: 4px;
-    overflow: hidden;
-    width: 100px;
-    height: 100px;
-  }
-
-  .image {
-    width:100%;
-    height:100%;
   }
 
   .title {
@@ -58,29 +94,106 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
     font-weight: bold;
     margin: var(--space-xs) 0;
   }
+
+  .small-post {
+    margin-bottom: var(--space-sm);
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: var(--space-sm) 0;
+    padding: var(--space-sm) 0;
+
+    &:hover {
+      background-color: var(--light-grey);
+      border-radius: 4px;
+      transition: all 200ms ease-in-out;
+    }
+
+    &:not(:hover) {
+      background-color: inherit;
+      border-radius: 4px;
+      transition: all 200ms ease-in-out;
+    }
+  }
+
+  .small-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    border-radius: 4px;
+    flex: 1;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+
+  .image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .small-post-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: var(--space-md);
+
+    .heading {
+      font-size: var(--text);
+      font-weight: bold;
+      margin-bottom: var(--space-sm);
+    }
+
+    .description {
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-sm);
+    }
+
+    .author {
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-sm);
+    }
+  }
 </style>
 
+<!-- wrapper contains two elements first post and small posts -->
+
+<div class="title">Recent Articles</div>
 <div class="wrapper">
   <div class="first-post-wrapper">
-    <div class="title">Most Recent Posts</div>
-    <div class="image-wrapper">
-      <Image class="image" src={images[`../assets/images/${firstPost.data.image}`]()} alt={''} />
-    </div>
-    <div class="post-title">{firstPost.data.title}</div>
-    <div class="post-author">
-      <FormattedDate date={firstPost.data.date} />
-       • {firstPost.data.author}
-    </div>
+    <a href={`learn/${firstPost.slug}`}>
+      <div class="image-wrapper">
+        <Image class="image" src={images[`../assets/images/${firstPost.data.image}`]()} alt={''} />
+      </div>
+    </a>
+    <a href={`learn/${firstPost.slug}`}>
+      <div class="post-title">{firstPost.data.title}</div>
+      <div class="post-author">
+        <FormattedDate date={firstPost.data.date} />
+        • {firstPost.data.author}
+      </div>
+    </a>
+  </div>
+  <div class="small-post-wrapper">
+    {
+      posts.map((post: Post) => (
+        <a class="silent" href={`/learn/${post.slug}`}>
+          <div class="small-post">
+            <figure class="small-image-wrapper">
+              <Image height={300} class="image" src={images[`../assets/images/${post.data.image}`]()} alt={''} />
+            </figure>
+            <div class="small-post-content">
+              <div class="heading">{post.data.title}</div>
+              <div class="description">{post.data.description}</div>
+              <div class="author">
+                <FormattedDate date={post.data.date} />• {post.data.author}
+              </div>
+            </div>
+          </div>
+        </a>
+      ))
+    }
   </div>
 </div>
-<div class="nextPosts">
-{posts.map((post)=>
-
-  <div class = 'small-post'>
-    <div class="small-image-wrapper">
-      <Image height={300} class="image" src={images[`../assets/images/${post.data.image}`]()} alt={''} />
-    </div>
-  </div>
-
-)}
-</div>
+<hr />

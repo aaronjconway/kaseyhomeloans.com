@@ -1,7 +1,12 @@
 <style>
-  .compressed {
-    max-width: 50%;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 </style>
 
-<div class="compressed"><slot /></div>
+<div class="wrapper">
+  <div class="compressed"><slot /></div>
+</div>

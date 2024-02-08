@@ -95,7 +95,7 @@
     {/if}
   </div>
   <div class="button-wrapper">
-    <a href="/blog" class="btn">See Programs</a>
+    <a href="/learn" class="btn">See Programs</a>
     {#if counter == 1}
       <button class="secondary" on:click={getDadJoke}>Give me another</button>
     {:else if counter == 4}
@@ -115,6 +115,10 @@
 </div>
 
 <style lang="scss">
+  a.btn {
+    color: white;
+  }
+
   .button-wrapper {
     display: flex;
     justify-content: center;

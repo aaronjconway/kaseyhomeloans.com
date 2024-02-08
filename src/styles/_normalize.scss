@@ -14,6 +14,9 @@ menu {
   padding: 0
 }
 
+figure {
+  margin: 0
+}
 
 html {
   line-height: 1.15;
@@ -59,14 +62,6 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 
-hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
-}
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -80,15 +75,6 @@ pre {
   /* 2 */
 }
 
-a {
-  background-color: transparent;
-  text-decoration: none;
-  color: inherit;
-
-  &:visited {
-    color: inherit;
-  }
-}
 
 
 

@@ -7,10 +7,18 @@ import { Icon } from 'astro-icon/components';
 <style lang="scss">
   @use '../../styles/base.scss';
 
-  a {
+  a.list {
+    display: block;
+    margin-left: -4px;
+    align-items: center;
+    padding: var(--space-xxs);
+    border-radius: 4px;
+    width: 100%;
+
     &:hover {
       color: var(--dark-blue);
       transition: all ease-in-out 100ms;
+      background: var(--light-blue);
     }
 
     &:not(:hover) {
@@ -30,9 +38,10 @@ import { Icon } from 'astro-icon/components';
 
     .right {
       background: var(--light-grey);
-
+      padding: var(--space-sm);
       li {
         background: unset !important;
+        margin: var(--space-sm) 0;
       }
     }
 
@@ -98,10 +107,6 @@ import { Icon } from 'astro-icon/components';
       .icon {
         margin-right: var(--space-xxs);
       }
-
-      &:hover {
-        background: var(--light-blue);
-      }
     }
   }
 
@@ -138,15 +143,15 @@ import { Icon } from 'astro-icon/components';
           <div class="links">
             <ul>
               <li class="title">Resources</li>
-              <li><a href="/blog">Blog & Market Updates</a></li>
-              <li><a href="/Our Team">Home Buying Guides</a></li>
+              <li><a class="list" href="/learn">Learning Center</a></li>
+              <li><a class="list" href="/Our Team">Home Buying Guides</a></li>
             </ul>
 
             <ul>
               <li class="title">Tools</li>
-              <li><a href="/licensing">Calculators</a></li>
-              <li><a href="/privacy-policy">Property Tools</a></li>
-              <li><a href="/technology"></a></li>
+              <li><a class="list" href="/licensing">Calculators</a></li>
+              <li><a class="list" href="/privacy-policy">Property Tools</a></li>
+              <li><a class="list" href="/technology"></a></li>
             </ul>
           </div>
         </div>
