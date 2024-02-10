@@ -7,6 +7,12 @@ import { Icon } from 'astro-icon/components';
 <style lang="scss">
   @use '../../styles/base.scss';
 
+  .drop-icon {
+    width: 40px;
+    height: 40px;
+    margin: -2rem 0rem -0.8rem 0;
+    padding: -1rem;
+  }
   a.list {
     display: block;
     margin-left: -4px;
@@ -125,6 +131,7 @@ import { Icon } from 'astro-icon/components';
   <Dropdown>
     <button>
       <span>Tools & Education</span>
+      <Icon name="ic:round-keyboard-arrow-down" class="drop-icon" />
     </button>
     <DropdownItems class:list={['dropdown-container']}>
       <div class="dropdown-grid">

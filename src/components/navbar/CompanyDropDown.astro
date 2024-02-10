@@ -115,11 +115,19 @@ import { Icon } from 'astro-icon/components';
     display: flex;
     gap: var(--space-lg);
   }
+
+  .drop-icon {
+    width: 40px;
+    height: 40px;
+    margin: -2rem 0rem -0.8rem 0;
+    padding: -1rem;
+  }
 </style>
 <li>
   <Dropdown>
     <button>
       <span>Company</span>
+      <Icon name="ic:round-keyboard-arrow-down" class="drop-icon" />
     </button>
     <DropdownItems class:list={['dropdown-container']}>
       <div class="dropdown-grid">
@@ -140,6 +148,7 @@ import { Icon } from 'astro-icon/components';
               <li class="title">Company</li>
               <li><a class="list" href="/about">About</a></li>
               <li><a class="list" href="/faq">FAQs</a></li>
+              <li><a class="list" href="/contact">Contact</a></li>
               <!-- <li><a class="list" href="/partner">Partner with Us</a></li> -->
             </ul>
 

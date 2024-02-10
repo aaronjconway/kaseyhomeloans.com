@@ -16,6 +16,7 @@ const { Content } = await entry.render();
 
 <Layout title="test" description="test" image="atest">
   <div class="container content">
+    {entry.data.tags}
     <Content />
   </div>
 </Layout>
