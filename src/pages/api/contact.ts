@@ -12,13 +12,6 @@ export const POST: APIRoute = async ({ request }) => {
 
     if (email && emailRegex.test(email.toString())) {
 
-
-
-
-
-
-
-
         return new Response(
             JSON.stringify({
                 message: "Anotha one",
