@@ -162,7 +162,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
 <div class="title">Recent Articles</div>
 <div class="wrapper">
   <div class="first-post-wrapper">
-    <a href={`learn/${firstPost.slug}`}>
+    <a href={`/learn/${firstPost.slug}`}>
       <div class="image-wrapper">
         <Image class="image" src={images[`../assets/images/${firstPost.data.image}`]()} alt={''} />
       </div>
