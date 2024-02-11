@@ -1,0 +1,14 @@
+---
+//
+import Layout from '@/layouts/Layout.astro';
+import ContactForm from '@/components/svelte/ContactForm.svelte';
+---
+
+<Layout title="conact us" description="a contact page todo" image="none">
+  <section>
+    <div class="container">
+      <h1>Contact</h1>
+      <ContactForm client:load />
+    </div>
+  </section>
+</Layout>
