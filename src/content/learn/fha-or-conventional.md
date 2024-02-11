@@ -5,11 +5,9 @@ date: 2024-02-06
 image: "image_1.jpg"
 categories: ["Application", "Data"]
 author: "John Doe"
-tags: ["nextjs", "tailwind"]
+tags: ["First Time Home Buyers", "FHA", 'Conventional']
 draft: false
 ---
-
-# What are Conventional Loans?
 
 At its core, a conventional loan is a type of mortgage that is not backed or insured by a government agency. The name "Conventional" came from it being the convention at the time.
 

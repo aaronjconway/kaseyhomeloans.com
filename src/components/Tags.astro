@@ -1,0 +1,44 @@
+---
+const { tags } = Astro.props;
+//todo:need a way of getting the tag link
+---
+
+<style lang="scss">
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: var(--space-sm);
+    margin: var(--space-sm) 0;
+  }
+
+  a.tag {
+    font-weight: 600;
+    padding: var(--space-xs) var(--space-sm);
+    color: var(--blue);
+    display: flex;
+    text-align: center;
+    font-size: var(--text-sm);
+    text-decoration: none;
+    background-color: var(--light-blue);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    white-space: nowrap;
+
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
+</style>
+
+<div class="wrapper">
+  {
+    tags.map((tag: string) => (
+      <a class="tag" href="">
+        {tag}
+      </a>
+    ))
+  }
+</div>

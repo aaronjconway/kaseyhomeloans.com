@@ -5,7 +5,6 @@ import SimpleCTA from '@/components/sections/simple-cta.astro';
 import supabase from '../lib/supabase.ts';
 
 const { data: employees, error } = await supabase.from('employees').select('*');
-console.log(employees);
 ---
 
 <style>

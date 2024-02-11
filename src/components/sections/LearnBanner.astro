@@ -5,74 +5,53 @@
 <style lang="scss">
   @use '../../styles/_base.scss';
 
-  section {
-    margin-top: var(--space-lg);
+  .heading {
+    font-size: var(--text-xl);
     margin-bottom: var(--space-sm);
-  }
 
-  .contents {
-    padding: var(--space-md);
-    justify-content: center;
-    text-align: center;
-    font-family: system-ui;
-    font-weight: bold;
-  }
-
-  .wrapper {
-    display: flex;
-    gap: var(--space-md);
-    justify-content: center;
-    font-size: var(--text-sm);
-
-    @media (max-width: base.$lg) {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin: 0;
-      padding: 0;
-      justify-content: center;
-
-      a {
-        gap: 0;
-        margin: var(--space-xxs);
-      }
+    @media (min-width: base.$lg) {
+      display: none;
     }
   }
 
-  .extra-wrapper {
-    display: flex;
+  .wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xxs);
+    white-space: nowrap;
     justify-content: center;
-    gap: var(--space-md);
+
+    a {
+      gap: 0;
+      margin: var(--space-xxs);
+    }
+
+    @media (min-width: base.$lg) {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--space-md);
+      justify-content: center;
+      align-items: center;
+      font-size: var(--text-sm);
+    }
   }
 
   a {
     color: var(--grey);
     border: solid 1px var(--grey);
     text-decoration: none;
-
-    &.small {
-      margin-top: var(--space-sm);
-      text-decoration: none;
-      border: none;
-      font-size: var(--text-sm);
-      white-space: nowrap;
-    }
   }
 </style>
 
-<section class="blue">
-  <div class="container">
-    <div class="contents">
-      <div class="heading">Explore by Topic</div>
-    </div>
+<div class="container">
+  <h2 class="heading">Explore:</h2>
+  <div class="wrapper">
+    <a class="btn-secondary">First Time Home Buyers</a>
+    <a class="btn-secondary">Market Updates</a>
+    <a class="btn-secondary">Home Buying Guides</a>
+    <a class="btn-secondary">Browse All Tags</a>
+    <a class="btn-secondary">Browse All Categories</a>
   </div>
-</section>
-<div class="wrapper">
-  <a class="btn-secondary">First Time Home Buyers</a>
-  <a class="btn-secondary">Market Updates</a>
-  <a class="btn-secondary">Home Buying Guides</a>
-</div>
-<div class="extra-wrapper">
-  <a class="small" href="/learn/categories">Browse All Home Categories</a>
-  <a class="small" href="/learn/tags">Browse all Tags</a>
 </div>

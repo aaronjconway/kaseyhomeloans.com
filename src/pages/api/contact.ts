@@ -22,3 +22,11 @@ export const POST: APIRoute = async ({ request }) => {
         { status: 200 }
     );
 };
+
+
+export const GET: APIRoute = async () => {
+
+    return new Response('GET not allowed', { status: 404 }
+
+    )
+}

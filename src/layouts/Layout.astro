@@ -26,10 +26,32 @@ export interface Props {
     <meta name="generator" content={Astro.generator} />
     <!-- //todo: add astro seo -->
     <script src="../lib/dropdown.js"></script>
+    <!-- smooth scrolling -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach((link) => {
+          link.addEventListener('click', smoothScroll);
+        });
+
+        function smoothScroll(ev: Event) {
+          ev.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+            });
+          }
+        }
+      });
+    </script>
   </head>
   <body>
     <Navbar />
-    <slot />
+    <main id="main">
+      <slot />
+    </main>
     <Footer />
     <style is:global>
       img {
