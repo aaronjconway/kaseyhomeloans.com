@@ -9,6 +9,8 @@ tags: ["First Time Home Buyers", "FHA", 'Conventional']
 draft: false
 ---
 
+## It really depends
+
 At its core, a conventional loan is a type of mortgage that is not backed or insured by a government agency. The name "Conventional" came from it being the convention at the time.
 
 Instead, conventional loans are offered and backed by private lenders and financial institutions such as Fannie Mae and Freddie Mac.

@@ -2,24 +2,36 @@ import type { APIRoute } from "astro";
 
 export const POST: APIRoute = async ({ request }) => {
     const data = await request.formData();
-    const name = data.get("name");
+    const email = data.get("email");
+    console.log(email)
 
     // Validate the data - you'll probably want to do more than this
 
-    if (!name) {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+
+    if (email && emailRegex.test(email.toString())) {
+
+
+
+
+
+
+
+
         return new Response(
             JSON.stringify({
-                message: "Missing required fields",
+                message: "Anotha one",
             }),
-            { status: 400 }
+            { status: 200 }
         );
     }
-    // Do something with the data, then return a success response
+
     return new Response(
         JSON.stringify({
-            message: "Success!"
+            message: "Email Regex Failed."
         }),
-        { status: 200 }
+        { status: 400 }
     );
 };
 

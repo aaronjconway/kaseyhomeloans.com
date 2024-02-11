@@ -1,6 +1,88 @@
 ---
 //author preview
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
 
-const { author } = Astro.props;
-const { title, image, social } = author.data;
+const { data } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*');
 ---
+
+<style lang="scss">
+  @use '../styles/base.scss';
+
+  .wrapper {
+    display: flex;
+    padding: var(--space-xl) 0;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    flex-direction: column;
+    background: var(--light-grey);
+    border-radius: 8px;
+    position: relative;
+    min-height: 10rem;
+
+    span.name {
+      margin: var(--space-xs);
+      font-weight: bold;
+      z-index: 2;
+    }
+
+    .background {
+      position: absolute;
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+      padding: 0;
+      margin: 0;
+      background-color: lightgrey;
+      z-index: 1;
+      top: 0;
+      height: 40%;
+      width: 100%;
+    }
+  }
+
+  .small-image-wrapper {
+    display: flex;
+    z-index: 3;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+
+  .image {
+    border-radius: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .details {
+    margin-top: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<div class="wrapper">
+  <div class="background"></div><figure class="small-image-wrapper">
+    <Image height={300} class="image" src={images[`../assets/images/test.jpg`]()} alt={''} />
+  </figure>
+
+  <div class="details">
+    <span class="name">
+      {data.first_name + ' ' + data.last_name}
+    </span>
+    <span> Co-Founder & {data.position} </span>
+  </div>
+</div>

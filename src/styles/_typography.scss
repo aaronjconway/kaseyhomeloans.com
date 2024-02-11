@@ -32,6 +32,10 @@
     --text-base-size: 1.125em;
   }
 
+  @media (max-width:base.$sm) {
+    --text-scale-ratio: 1.10;
+  }
+
 
 }
 
@@ -57,12 +61,8 @@ form legend {
 
 h1,
 .text--xxl {
-  font-size: var(--text-xl);
+  font-size: var(--text-xxl);
   line-height: 1.1em;
-
-  @media (min-width:base.$lg) {
-    font-size: var(--text-xxl);
-  }
 }
 
 h2,

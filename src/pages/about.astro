@@ -1,13 +1,32 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import SimpleCTA from '@/components/sections/simple-cta.astro';
+import AuthorCard from '@/components/AuthorCard.astro';
 
-import supabase from '../lib/supabase.ts';
+// import supabase from '../lib/supabase.ts';
+//
+// const { data: employees } = await supabase.from('employees').select('*').eq('title', 'Owner');
+//
+// const { data, error } = await supabase.storage.from('employee_pictures').list('test', {
+//   limit: 100,
+//   offset: 0,
+//   sortBy: { column: 'name', order: 'asc' },
+// });
 
-const { data: employees, error } = await supabase.from('employees').select('*');
+// console.log(data, error);
 ---
 
-<style>
+<style lang="scss">
+  @use '../styles/_base.scss';
+
+  .founders-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    @media (min-width: base.$lg) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
   .heading-wrapper {
     display: flex;
     flex-direction: column;
@@ -40,10 +59,6 @@ const { data: employees, error } = await supabase.from('employees').select('*');
 >
   <div class="heading-wrapper compressed container">
     <h1>About Us</h1>
-    <div class="test-wrapper">
-      here we are testing supabase
-      <div class="test">{employees}</div>
-    </div>
     <hr />
     <div class="sub-heading center">High level professionals for superior home buying experience.</div>
     <h2>Who We Are</h2>
@@ -53,6 +68,10 @@ const { data: employees, error } = await supabase.from('employees').select('*');
         journey towards homeownership. Founded by Ramsin Kuryakoos and Aaron Conway, Kasey Home Loans is built upon the
         belief that securing a home loan should be a seamless and consistent experience.
       </p>
+
+      <!-- <div class="founders-wrapper"> -->
+      <!--   {employees?.map((person) => <AuthorCard data={person} />)} -->
+      <!-- </div> -->
 
       <h3>Transparency</h3>
       <p>
