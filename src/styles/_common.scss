@@ -27,14 +27,6 @@ section {
     background: var(--blue)
   }
 
-  //attempt to set link color for small screens
-  @media only screen and (max-width: 767px) {
-
-    a {
-      color: red;
-    }
-  }
-
   a {
 
     &.silent {
@@ -88,6 +80,7 @@ hr.light {
 }
 
 a {
+  color: var(--blue);
 
   &.silent {
     color: var(--ink);
