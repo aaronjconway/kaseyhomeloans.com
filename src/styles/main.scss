@@ -1,8 +1,10 @@
 // Import base styles
-@import "base";
-@import "typography";
-@import "common";
-@import "navigation";
-@import "buttons";
+@import 'base';
+@import 'buttons';
+@import 'colors';
+@import 'common';
+@import 'content';
+@import 'navigation';
+@import 'normalize';
+@import 'typography';
 @import 'custom_splide';
-@import "normalize";

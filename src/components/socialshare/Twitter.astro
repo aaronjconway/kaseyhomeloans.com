@@ -1,0 +1,17 @@
+---
+import type ButtonProps from './types';
+import { Icon } from 'astro-icon/components';
+
+type Props = ButtonProps;
+
+const { url = Astro.request.url, description, via } = Astro.props;
+
+let URL = `https://twitter.com/intent/tweet?url=${url}`;
+
+if (description) URL += `&text=${description}`;
+if (via) URL += `&via=${via}`;
+---
+
+<a class="social-share-btn" target="_blank" href={URL} rel="noopener noreferrer">
+ <Icon class = 'social-icon' name = 'simple-icons:twitter' />
+</a>

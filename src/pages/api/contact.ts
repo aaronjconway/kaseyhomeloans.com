@@ -1,37 +1,35 @@
-import type { APIRoute } from "astro";
+import type { APIRoute } from 'astro';
 
 export const POST: APIRoute = async ({ request }) => {
-    const data = await request.formData();
-    const email = data.get("email");
-    console.log(email)
+  const data = await request.formData();
 
-    // Validate the data - you'll probably want to do more than this
+  const name = data.get('name');
+  const phone = data.get('phone');
+  const message = data.get('message');
+  const email = data.get('email');
 
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  // Validate the data - you'll probably want to do more than this
 
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    if (email && emailRegex.test(email.toString())) {
-
-        return new Response(
-            JSON.stringify({
-                message: "Anotha one",
-            }),
-            { status: 200 }
-        );
-    }
-
+  // good email
+  if (email && emailRegex.test(email.toString())) {
     return new Response(
-        JSON.stringify({
-            message: "Email Regex Failed."
-        }),
-        { status: 400 }
+      JSON.stringify({
+        message: 'Anotha one',
+      }),
+      { status: 200 }
     );
+  }
+
+  return new Response(
+    JSON.stringify({
+      message: 'Email Regex Failed.',
+    }),
+    { status: 400 }
+  );
 };
 
-
 export const GET: APIRoute = async () => {
-
-    return new Response('GET not allowed', { status: 404 }
-
-    )
-}
+  return new Response('GET not allowed', { status: 404 });
+};

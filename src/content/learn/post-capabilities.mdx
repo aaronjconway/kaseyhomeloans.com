@@ -1,0 +1,59 @@
+---
+title: "Post Capabilities - Post Styles"
+description: "this is meta description"
+date: 2024-02-07
+image: "image_1.jpg"
+categories: ["Application", "Data"]
+author: "Aaron Conway"
+tags: ["First Time Home Buyers", "FHA", 'Conventional']
+draft: false
+
+---
+import Callout from '../../components/Callout.astro'
+import Note from '../../components/Note.astro'
+import Accordion from '../../components/svelte/Accordion.svelte'
+import SimpleCTA from '../../components/sections/SimpleCTA.astro'
+
+
+## This Is A Heading
+### This Is A Heading
+#### This Is A Heading
+##### This Is A Heading
+
+ Lorem, dignissim at, vehicula et, ornare non, libero. Donec molestie, velit
+quis dictum scelerisque, est lectus hendrerit lorem, eget dignissim orci nisl
+sit amet massa. Etiam volutpat lobortis eros. Nunc ac tellus in sapien molestie
+rhoncus. Pellentesque nisl. Praesent venenatis blandit velit. Fusce rutrum. Cum
+sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.
+
+<Callout>
+
+Dictum accumsan, convallis accumsan, cursus sit amet, ipsum. In
+
+pharetra sagittis nunc.
+Donec consequat mi. Quisque vitae dolor. Integer lobortis. Maecenas id.
+
+</Callout>
+
+<Note>
+
+Dictum accumsan, convallis accumsan, cursus sit amet, ipsum. In
+
+pharetra sagittis nunc.
+Donec consequat mi. Quisque vitae dolor. Integer lobortis. Maecenas id.
+
+</Note>
+
+<Accordion client:load title = 'Click me'>
+                todo: we need to make this better. fast clicks has problems and it's currently off screen.
+</Accordion>
+
+- list item
+- list item
+                - nested list item
+                - nested list item
+                - nested list item
+
+<SimpleCTA sub-head = '' content = '' description = '' buttonText = ''/>
+
+#todo make tabs. check astrowind or ship or whatever for impl

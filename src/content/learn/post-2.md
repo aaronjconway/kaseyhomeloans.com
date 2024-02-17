@@ -1,11 +1,11 @@
 ---
-title: "The Home buying process"
-description: "here we help you with stuff"
+title: 'The Home buying process'
+description: 'here we help you with stuff'
 date: 2022-04-04
-image: "image_2.jpg"
-categories: ["Technology", "Data"]
-author: "Aaron Conway"
-tags: ["home buying", "tailwind"]
+image: 'image_2.jpg'
+categories: ['Technology', 'Data']
+author: 'Aaron Conway'
+tags: ['home buying', 'tailwind']
 draft: false
 ---
 

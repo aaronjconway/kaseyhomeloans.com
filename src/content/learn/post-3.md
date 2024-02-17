@@ -1,12 +1,12 @@
 ---
-title: "Nisl. Pellentesque porta augue in diam l ljljlj l."
-meta_title: ""
-description: "Eu erat vel arcu tristique mattis. Nullam placerat lorem non augue."
+title: 'Nisl. Pellentesque porta augue in diam l ljljlj l.'
+meta_title: ''
+description: 'Eu erat vel arcu tristique mattis. Nullam placerat lorem non augue.'
 date: 2022-04-04T05:00:00Z
-image: "image_3.jpg"
-categories: ["Software"]
-author: "John Doe"
-tags: ["software", ]
+image: 'image_3.jpg'
+categories: ['Software']
+author: 'John Doe'
+tags: ['software']
 draft: false
 ---
 

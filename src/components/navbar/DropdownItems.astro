@@ -5,9 +5,6 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<div
-  class:list={["astronav-dropdown dropdown-toggle hidden", className]}
-  aria-expanded="false"
->
+<div class:list={['astronav-dropdown dropdown-toggle hidden', className]} aria-expanded="false">
   <slot />
 </div>

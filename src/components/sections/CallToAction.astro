@@ -9,10 +9,12 @@ import DadJoke from '../../components/svelte/DadJoke.svelte';
 
   .grid {
     display: grid;
-    padding: var(--space-xl);
+    padding: 0 calc(2 * var(--space-xl) + 10px);
+    padding-top: calc(2 * var(--space-xl) + 10px);
+    padding-bottom: calc(var(--space-xl) + 10px);
     align-items: center;
     justify-content: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     gap: var(--space-xxl);
 
     @media (max-width: base.$lg) {
@@ -28,7 +30,7 @@ import DadJoke from '../../components/svelte/DadJoke.svelte';
 
         h2 {
           font-weight: bold;
-          font-size: var(--text-xxl);
+          font-size: var(--text-xl);
           margin-top: var(--space-xxs);
           padding: 0;
         }
@@ -38,8 +40,7 @@ import DadJoke from '../../components/svelte/DadJoke.svelte';
           margin-top: var(--space-md);
 
           &.sub-heading {
-            margin: 0;
-            color: var(--blue);
+            color: var(--blue-600);
             font-weight: bold;
           }
         }
@@ -71,17 +72,23 @@ import DadJoke from '../../components/svelte/DadJoke.svelte';
       ul {
         list-style-type: none;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
 
         li {
           display: flex;
           width: 100%;
+          font-size: var(--text-md);
           font-weight: bold;
           align-items: center;
-          margin-bottom: var(--space-sm);
+          margin-bottom: var(--space-lg);
         }
 
         .icon {
-          margin-right: var(--space-sm);
+          margin-right: var(--space-md);
           min-width: var(--space-md);
           min-height: var(--space-md);
           color: green;
@@ -96,7 +103,7 @@ import DadJoke from '../../components/svelte/DadJoke.svelte';
 
       h2 {
         font-weight: bold;
-        font-size: var(--text-xxl);
+        font-size: var(--text-xl);
         margin-top: var(--space-xxs);
         padding: 0;
       }
@@ -106,8 +113,7 @@ import DadJoke from '../../components/svelte/DadJoke.svelte';
         margin-top: var(--space-md);
 
         &.sub-heading {
-          margin: 0;
-          color: var(--blue);
+          color: var(--blue-600);
           font-weight: bold;
         }
       }
@@ -127,15 +133,14 @@ import DadJoke from '../../components/svelte/DadJoke.svelte';
     <div class="grid">
       <div class="cta-content">
         <p class="sub-heading">100% <u>Free</u> and no obligation</p>
-        <h2>Get Your Home Buying Options Today.</h2>
+        <h2>Get Accurate Home Buying Information Today</h2>
         <p class="sub-title">We're excited to help wether it's your first or fourth home.</p>
       </div>
       <div class="cta-reasons">
         <ul>
-          <li><Icon class="icon" name="ic:check" />No Credit Pull.</li>
-          <li><Icon class="icon" name="ic:check" />Short Phone Call or Fully Online.</li>
-          <li><Icon class="icon" name="ic:check" />No annoying spam.</li>
-          <li><Icon class="icon" name="ic:check" />Strategies for any stage of the process.</li>
+          <li><Icon class="icon" name="ic:check" />Soft Credit Pull</li>
+          <li><Icon class="icon" name="ic:check" />Strategies for any stage of the Process</li>
+          <li><Icon class="icon" name="ic:check" />No annoying spam after</li>
         </ul>
       </div>
     </div>

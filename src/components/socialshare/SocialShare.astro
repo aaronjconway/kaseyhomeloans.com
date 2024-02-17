@@ -1,0 +1,17 @@
+---
+import EmailShareButton from './Email.astro';
+import FacebookShareButton from './Facebook.astro';
+import LinkedInShareButton from './LinkedIn.astro';
+import RedditShareButton from './Reddit.astro';
+import TwitterShareButton from './Twitter.astro';
+
+const DEFAULT_COMPONENTS = [TwitterShareButton, FacebookShareButton, LinkedInShareButton, EmailShareButton];
+
+const { buttons = DEFAULT_COMPONENTS, url = Astro.request.url, title, description, via } = Astro.props;
+---
+
+<style></style>
+<div class="astro-social-share">
+  <div>Share:</div>
+  {buttons.map((Button: any) => <Button url={url} description={description} via={via} title={title} />)}
+</div>

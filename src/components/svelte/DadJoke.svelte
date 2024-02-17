@@ -30,7 +30,7 @@
     if (counter == 9) {
       joke = `
 			<div>
-				<p> No more jokes. All out. That's all of 'em.  </p>
+				<p> No more jokes. All out. That's all!.  </p>
 				<a href = "https://1660690.my1003app.com/2087178/inquiry "><b>Get Started</b></a>
 			</div>
 			`;
@@ -95,7 +95,7 @@
     {/if}
   </div>
   <div class="button-wrapper">
-    <a href="/learn" class="btn">See Programs</a>
+    <a href="/learn" class="btn">Request a Quote</a>
     {#if counter == 1}
       <button class="secondary" on:click={getDadJoke}>Give me another</button>
     {:else if counter == 4}
@@ -115,14 +115,21 @@
 </div>
 
 <style lang="scss">
+  @use '../../styles/base.scss';
+
   a.btn {
     color: white;
   }
 
   .button-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    gap: var(--space-md);
+
+    @media (min-width: base.$lg) {
+      flex-direction: row;
+    }
   }
 
   .wrapper {
@@ -131,12 +138,35 @@
   }
 
   .joke {
-    display: flex;
+    display: inline-block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
     text-align: center;
     flex-direction: column;
     justify-content: center;
-    min-height: 5em;
+    min-height: var(--space-xxl);
     margin-bottom: var(--space-xl);
-    font-size: 1.4rem;
+    font-size: var(--text-md);
+
+    &::before {
+      content: '“';
+      display: inline-block;
+      margin: 5px;
+      font-size: var(--text-xl);
+    }
+
+    &::after {
+      content: '”';
+      display: inline-block;
+      margin-right: 3px;
+      font-size: var(--text-xl);
+    }
+  }
+
+  .joke-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
   }
 </style>

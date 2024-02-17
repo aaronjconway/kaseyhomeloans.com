@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="cta">
-      <a class="btn" href="https://1660690.my1003app.com/2087178/">See Programs</a>
+      <a class="btn" href="https://1660690.my1003app.com/2087178/">Request Home Buying Strategy</a>
     </div>
   </div>
 </section>
@@ -46,8 +46,18 @@
 <style lang="scss">
   @use '../../styles/base.scss';
 
+  section {
+    margin-bottom: 0;
+    background-color: var(--blue-800);
+    color: white;
+  }
+
+  h2 {
+    margin-bottom: var(--space-xl);
+  }
+
   .cta {
-    margin-top: var(--space-md);
+    margin: var(--space-lg) 0;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -55,10 +65,14 @@
   }
 
   .container {
-    padding: var(--space-lg);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: var(--space-xl) 5%;
+
+    @media (min-width: base.$lg) {
+      padding: var(--space-xl) 0;
+    }
   }
 
   .heading {
@@ -71,9 +85,17 @@
   }
 
   .step {
-    display: flex;
-    flex-direction: column;
-    margin: var(--space-lg);
+    @media (min-width: base.$md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: base.$lg) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+      padding: 0;
+      margin: var(--space-lg);
+      width: 100%;
+    }
   }
 
   .step-header {
@@ -81,7 +103,7 @@
     font-weight: 700;
     font-size: var(--text-md);
     align-items: center;
-    padding-bottom: var(--space-unit);
+    padding-bottom: var(--space-md);
   }
 
   .step-header-text {
@@ -90,31 +112,31 @@
 
   .step-number {
     display: flex;
-    background: var(--blue);
+    background: var(--blue-700);
     color: white;
     align-items: center;
     align-self: flex-start;
     border-radius: 100%;
     margin: 0;
     flex-shrink: 0;
-    height: 3.5rem;
+    height: var(--space-xl);
     justify-content: center;
-    width: 3.5rem;
+    width: var(--space-xl);
   }
 
   .steps-wrapper {
-    margin-top: var(--space-md);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 0 var(--space-md);
+    gap: var(--space-xl);
+    grid-template-columns: 1fr;
+    margin-bottom: var(--space-xl);
 
-    @media (max-width: base.$lg) {
-      grid-template-columns: 1fr 1fr;
-      padding: 0;
+    @media (min-width: base.$md) {
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (max-width: base.$sm) {
-      grid-template-columns: 1fr;
+    @media (min-width: base.$lg) {
+      margin-top: var(--space-md);
+      grid-template-columns: repeat(4, 1fr);
       padding: 0;
     }
   }

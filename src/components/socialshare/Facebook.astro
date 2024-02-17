@@ -1,0 +1,14 @@
+---
+import type ButtonProps from './types';
+import { Icon } from 'astro-icon/components';
+
+type Props = ButtonProps;
+
+const { url = Astro.request.url } = Astro.props;
+
+let URL = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+---
+
+<a class="social-share-btn" target="_blank" href={URL} rel="noopener noreferrer">
+  <Icon class = 'social-icon' name="simple-icons:facebook" />
+</a>

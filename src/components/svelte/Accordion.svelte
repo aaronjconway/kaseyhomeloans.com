@@ -50,9 +50,9 @@
 
 <style lang="scss" global>
   h3 {
-    color: var(--ink);
+    color: var(--platinum-800);
     button {
-      color: var(--ink);
+      color: var(--platinum-800);
       //todo: need a better way of doing this than turning off in each scoped file.
       //currently we have hover:filter in the button.scss file.
       &:hover {
@@ -62,7 +62,7 @@
   }
 
   .accordion-wrapper {
-    padding-bottom: var(--space-unit);
+    padding-bottom: var(--space);
   }
 
   .accordion {
@@ -72,7 +72,7 @@
 
     .accordion__heading {
       font-size: var(--text);
-      margin: 0 0 0.5em;
+      margin: 0 0 var(--space-md);
       font-weight: bold;
       width: 100%;
       max-width: unset;
@@ -85,7 +85,7 @@
       font-weight: bold;
       width: 100%;
       text-align: left;
-      padding: 0 0 0.5em;
+      padding: 0 0 var(--space-md);
 
       &::before {
         content: '\25B6';
@@ -98,9 +98,9 @@
 
     .accordion__content {
       overflow: hidden;
-      padding: calc(var(--space-unit) / 2) 1rem 2rem;
+      padding: calc(var(--space) / 2) var(--space) var(--space-md);
       display: grid;
-      grid-gap: 1rem;
+      grid-gap: var(--space);
 
       * {
         margin: 0;
@@ -112,7 +112,7 @@
 
       .accordion__button::before {
         transform: rotate(90deg);
-        color: var(--blue);
+        color: var(--blue-600);
       }
     }
   }

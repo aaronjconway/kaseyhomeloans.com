@@ -17,7 +17,7 @@
   .wrapper {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--space-xxs);
     white-space: nowrap;
     justify-content: center;
@@ -25,6 +25,20 @@
     a {
       gap: 0;
       margin: var(--space-xxs);
+      border: none;
+      border-radius: 2px;
+      color: var(--platinum-800);
+      background: var(--platinum-200);
+      text-decoration: none;
+    }
+
+    @media (min-width: base.$md) {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      align-items: center;
+      font-size: var(--text-sm);
     }
 
     @media (min-width: base.$lg) {
@@ -36,12 +50,6 @@
       align-items: center;
       font-size: var(--text-sm);
     }
-  }
-
-  a {
-    color: var(--grey);
-    border: solid 1px var(--grey);
-    text-decoration: none;
   }
 </style>
 

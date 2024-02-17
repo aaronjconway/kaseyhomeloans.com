@@ -7,116 +7,27 @@
 
   .grid {
     display: grid;
-    padding: var(--space-xl);
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--space-md);
 
-    @media (max-width: base.$lg) {
-      gap: var(--space-md);
-      padding: var(--space-md) 0;
-      grid-template-columns: 1fr;
-
-      .cta-content {
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-        justify-content: start;
-
-        h2 {
-          font-weight: bold;
-          font-size: var(--text-xxl);
-          margin-top: var(--space-xxs);
-          padding: 0;
-        }
-
-        p {
-          font-size: var(--text);
-          margin-top: var(--space-md);
-
-          &.sub-heading {
-            margin: 0;
-            color: var(--blue);
-            font-weight: bold;
-          }
-        }
-      }
-
-      .cta-reasons {
-        ul {
-          list-style-type: none;
-          padding: 0;
-
-          li {
-            display: flex;
-            width: 100%;
-            align-items: center;
-            margin-bottom: var(--space-sm);
-          }
-
-          .icon {
-            margin-right: var(--space-md);
-            min-width: var(--space-md);
-            min-height: var(--space-md);
-            color: green;
-          }
-        }
-      }
-    }
-
-    .cta-reasons {
-      ul {
-        list-style-type: none;
-        padding: 0;
-
-        li {
-          display: flex;
-          width: 100%;
-          font-weight: bold;
-          align-items: center;
-          margin-bottom: var(--space-sm);
-        }
-
-        .icon {
-          margin-right: var(--space-sm);
-          min-width: var(--space-md);
-          min-height: var(--space-md);
-          color: green;
-        }
-      }
-    }
-    .cta-content {
+    .button-wrapper {
       display: flex;
-      height: 100%;
       flex-direction: column;
-      justify-content: start;
+      gap: var(--space-sm);
+    }
 
-      h2 {
-        font-weight: bold;
-        font-size: var(--text-xxl);
-        margin-top: var(--space-xxs);
-        padding: 0;
-      }
+    @media (min-width: base.$lg) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:var(--space-xxl);
+      margin: var(--space-xl) 0;
+      justify-content: center;
+      align-items: center;
 
-      p {
-        font-size: var(--text);
-        margin-top: var(--space-md);
-
-        &.sub-heading {
-          margin: 0;
-          color: var(--blue);
-          font-weight: bold;
-        }
+      .button-wrapper {
+        display: flex;
+        flex-direction: row;
       }
     }
-  }
-
-  .button-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-md);
-    padding-bottom: var(--space-xl);
   }
 </style>
 
@@ -130,8 +41,8 @@
       </div>
       <div class="cta-buttons">
         <div class="button-wrapper">
-          <a href="/" class="btn">Home Buyers</a>
-          <a href="/" class="btn">Home Owners</a>
+          <a href="/" class="btn">Show Me Purchase Options</a>
+          <a href="/" class="btn">Work On My Current Home </a>
         </div>
       </div>
     </div>

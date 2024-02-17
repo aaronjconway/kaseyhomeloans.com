@@ -4,134 +4,11 @@ import DropdownItems from './DropdownItems.astro';
 import { Icon } from 'astro-icon/components';
 ---
 
-<style lang="scss">
-  @use '../../styles/base.scss';
-
-  .drop-icon {
-    width: 40px;
-    height: 40px;
-    margin: -2rem 0rem -0.8rem 0;
-    padding: -1rem;
-  }
-  a.list {
-    display: block;
-    margin-left: -4px;
-    align-items: center;
-    padding: var(--space-xxs);
-    border-radius: 4px;
-    width: 100%;
-
-    &:hover {
-      color: var(--dark-blue);
-      transition: all ease-in-out 100ms;
-      background: var(--light-blue);
-    }
-
-    &:not(:hover) {
-      color: var(--ink);
-      transition: all ease-in-out 100ms;
-    }
-  }
-
-  .title {
-    font-weight: bold;
-    background: unset !important;
-  }
-
-  .dropdown-grid {
-    display: grid;
-    grid-template-columns: 1fr auto;
-
-    .right {
-      background: var(--light-grey);
-      padding: var(--space-sm);
-      li {
-        background: unset !important;
-        margin: var(--space-sm) 0;
-      }
-    }
-
-    &-item {
-      padding: var(--space-md);
-    }
-  }
-  @media (max-width: base.$lg) {
-    .dropdown-grid {
-      display: flex;
-      flex-direction: column;
-
-      &-item {
-        padding: var(--space-md) 0;
-      }
-    }
-  }
-
-  .heading-wrapper {
-    display: flex;
-    margin-bottom: var(--space-md);
-    .icon-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 4px;
-      background: var(--light-blue);
-      margin-right: var(--space-sm);
-      height: 40px;
-      width: 40px;
-    }
-
-    .icon {
-      color: var(--blue);
-      height: 75%;
-      width: 75%;
-    }
-
-    h3 {
-      font-size: var(--text);
-      color: var(--dark-blue);
-      margin: 0;
-      padding: 0;
-    }
-
-    p {
-      font-size: var(--text);
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  ul {
-    padding: 0;
-    margin: 0;
-    li {
-      display: flex;
-      align-items: center;
-      padding: var(--space-xxs);
-      border-radius: 3px;
-      width: 100%;
-
-      .icon {
-        margin-right: var(--space-xxs);
-      }
-    }
-  }
-
-  hr {
-    background: lightgrey;
-    width: 100%;
-    margin-bottom: var(--space-md);
-  }
-
-  .links {
-    display: flex;
-    gap: var(--space-lg);
-  }
-</style>
 <li>
   <Dropdown>
     <button>
       <span>Tools & Education</span>
-      <Icon name="ic:round-keyboard-arrow-down" class="drop-icon" />
+      <!-- <Icon name="ic:round-keyboard-arrow-down" class="drop-icon" /> -->
     </button>
     <DropdownItems class:list={['dropdown-container']}>
       <div class="dropdown-grid">
@@ -167,11 +44,11 @@ import { Icon } from 'astro-icon/components';
             <li>
               <!-- todo make sure you check rel=nofollow-->
               <Icon class="icon" name="ic:twotone-house" />
-              <a rel="nofollow" href=""><span>First time home buyers guide</span></a>
+              <a href="">First time home buyers guide</a>
             </li>
             <li>
               <Icon class="icon" name="ic:twotone-percent" />
-              <a rel="nofollow" href=""><span>How to shop mortgage rates?</span></a>
+              <a href="">How to shop mortgage rates?</a>
             </li>
           </ul>
         </div>

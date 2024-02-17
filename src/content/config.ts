@@ -1,17 +1,16 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content';
 
 //pages in the learn content folder = equivalent to blog
 const learnCollection = defineCollection({
   schema: z.object({
-
     //testing lengt
     title: z.string().max(50),
     description: z.string().max(70),
     date: z.coerce.date(),
     image: z.string(),
     author: z.string(),
-    categories: z.array(z.string()).default(["Misc"]),
-    tags: z.array(z.string()).default(["Misc"]),
+    categories: z.array(z.string()).default(['Misc']),
+    tags: z.array(z.string()).default(['Misc']),
     draft: z.boolean().optional(),
   }),
 });
@@ -31,7 +30,7 @@ const authorsCollection = defineCollection({
             icon: z.string().optional(),
             link: z.string().optional(),
           })
-          .optional(),
+          .optional()
       )
       .optional(),
     draft: z.boolean().optional(),

@@ -32,7 +32,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
   @use '../styles/_base.scss';
 
   a {
-    color: var(--ink);
+    color: var(--platinum-800);
     text-decoration: none;
   }
 
@@ -59,7 +59,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
       .small-post-wrapper {
         display: flex;
         flex-direction: column;
-        margin-top: calc(-1 * 2rem);
+        margin-top: calc(-1 * var(--space-md));
       }
       .small-post {
         margin: var(--space-sm);
@@ -103,7 +103,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
     padding: var(--space-sm) 0;
 
     &:hover {
-      background-color: var(--light-grey);
+      background-color: var(--platinum-100);
       border-radius: 4px;
       transition: all 200ms ease-in-out;
     }
@@ -155,45 +155,53 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
       margin-bottom: var(--space-sm);
     }
   }
+
+  section {
+    margin-bottom: 0;
+  }
 </style>
 
 <!-- wrapper contains two elements first post and small posts -->
 
-<div class="title">Recent Articles</div>
-<div class="wrapper">
-  <div class="first-post-wrapper">
-    <a href={`/learn/${firstPost.slug}`}>
-      <div class="image-wrapper">
-        <Image class="image" src={images[`../assets/images/${firstPost.data.image}`]()} alt={''} />
-      </div>
-    </a>
-    <a href={`learn/${firstPost.slug}`}>
-      <div class="post-title">{firstPost.data.title}</div>
-      <div class="post-author">
-        <FormattedDate date={firstPost.data.date} />
-        • {firstPost.data.author}
-      </div>
-    </a>
-  </div>
-  <div class="small-post-wrapper">
-    {
-      posts.map((post: Post) => (
-        <a class="silent" href={`/learn/${post.slug}`}>
-          <div class="small-post">
-            <figure class="small-image-wrapper">
-              <Image height={300} class="image" src={images[`../assets/images/${post.data.image}`]()} alt={''} />
-            </figure>
-            <div class="small-post-content">
-              <div class="heading">{post.data.title}</div>
-              <div class="description">{post.data.description}</div>
-              <div class="author">
-                <FormattedDate date={post.data.date} />• {post.data.author}
-              </div>
-            </div>
+<section>
+  <div class="container">
+    <div class="title">Recent Articles</div>
+    <div class="wrapper">
+      <div class="first-post-wrapper">
+        <a href={`/learn/${firstPost.slug}`}>
+          <div class="image-wrapper">
+            <Image class="image" src={images[`../assets/images/${firstPost.data.image}`]()} alt={''} />
           </div>
         </a>
-      ))
-    }
+        <a href={`learn/${firstPost.slug}`}>
+          <div class="post-title">{firstPost.data.title}</div>
+          <div class="post-author">
+            <FormattedDate date={firstPost.data.date} />
+            • {firstPost.data.author}
+          </div>
+        </a>
+      </div>
+      <div class="small-post-wrapper">
+        {
+          posts.map((post: Post) => (
+            <a class="silent" href={`/learn/${post.slug}`}>
+              <div class="small-post">
+                <figure class="small-image-wrapper">
+                  <Image height={300} class="image" src={images[`../assets/images/${post.data.image}`]()} alt={''} />
+                </figure>
+                <div class="small-post-content">
+                  <div class="heading">{post.data.title}</div>
+                  <div class="description">{post.data.description}</div>
+                  <div class="author">
+                    <FormattedDate date={post.data.date} />• {post.data.author}
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <hr />
   </div>
-</div>
-<hr />
+</section>

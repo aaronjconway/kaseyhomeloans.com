@@ -1,48 +1,49 @@
-@use './base.scss';
+@use "./base.scss";
 
+// @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   //for body
-  --font-body: system-ui;
+  --font-body: Libre Franklin, -apple-system, BlinkMacSystemFont, Roboto, Droid Sans, Helvetica, Arial, sans-serif;
   //for heading
-  --font-heading: system-ui;
+  --font-heading: Libre Franklin, -apple-system, BlinkMacSystemFont, Roboto, Droid Sans, Helvetica, Arial, sans-serif;
 
   /* set base values */
-  --text-base-size: 1.25em;
-  --text-scale-ratio: 1.20;
+  --text-base-size: 1.25rem;
+  --text-scale-ratio: 1.3;
 
   /* type scale */
-  --text-xs: calc(1em / (var(--text-scale-ratio) ** 2));
-  --text-sm: calc(1em / var(--text-scale-ratio));
-  --text-md: calc(1em * var(--text-scale-ratio));
-  --text-lg: calc(1em * pow(var(--text-scale-ratio), 2));
-  --text-xl: calc(1em * pow(var(--text-scale-ratio), 3));
-  --text-xxl: calc(1em * pow(var(--text-scale-ratio), 4));
-  --text-xxxl: calc(1em * pow(var(--text-scale-ratio), 5));
+  --text-xs: calc(var(--text-base-size) / pow(var(--text-scale-ratio), 2));
+  --text-sm: calc(var(--text-base-size) / var(--text-scale-ratio));
+  --text-md: calc(var(--text-base-size) * var(--text-scale-ratio));
+  --text-lg: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 2));
+  --text-xl: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 3));
+  --text-xxl: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 4));
+  --text-xxxl: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 5));
 
   /* line-height */
-  --heading-line-height: 1em;
-  --body-line-height: 1.6em;
+  --heading-line-height: 1;
+  --body-line-height: 1.6;
 
-  @media (max-width:base.$lg) {
-    --text-base-size: 1.1875em;
+  @media (max-width: base.$lg) {
+    --text-base-size: 1.1875rem;
   }
 
-  @media (max-width:base.$md) {
-    --text-base-size: 1.125em;
+  @media (max-width: base.$md) {
+    --text-base-size: 1.125rem;
   }
 
-  @media (max-width:base.$sm) {
-    --text-scale-ratio: 1.10;
+  @media (max-width: base.$sm) {
+    //setting this to have less drastic typography in mobile
+    --text-scale-ratio: 1.15;
   }
-
-
 }
 
+//body font size
 body {
   font-size: var(--text-base-size);
   font-family: var(--font-body);
-
+  color: var(--platinum-font);
 }
 
 h1,
@@ -52,6 +53,28 @@ h4,
 form legend {
   font-family: var(--font-heading);
   margin-bottom: var(--space-xxs);
+
+  &.after {
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 3rem;
+      background-color: #000;
+      margin: 1rem auto 0;
+    }
+  }
+
+  &.before {
+    &::before {
+      content: "";
+      display: block;
+      height: 5px;
+      width: 3rem;
+      background-color: var(--ash-700);
+      margin-bottom: 0.5rem;
+    }
+  }
 }
 
 /* text size */
@@ -62,7 +85,7 @@ form legend {
 h1,
 .text--xxl {
   font-size: var(--text-xxl);
-  line-height: 1.1em;
+  line-height: 1.1;
 }
 
 h2,
@@ -93,58 +116,7 @@ p {
   line-height: var(--body-line-height);
 }
 
-
 b,
 strong {
   font-weight: bold;
-}
-
-.text-container {
-
-  h2,
-  h3,
-  h4 {
-    margin-top: var(--space-sm);
-  }
-
-  ul,
-  ol,
-  p {
-    margin-bottom: var(--space-md);
-  }
-
-  ul,
-  ol {
-    list-style-position: outside;
-    padding-left: 24px;
-  }
-
-  ul {
-    list-style-type: disc;
-  }
-
-  ol {
-    list-style-type: decimal;
-  }
-
-  ul li,
-  ol li {
-    line-height: var(--body-line-height);
-  }
-
-  em {
-    font-style: italic;
-  }
-
-  u {
-    text-decoration: underline;
-  }
-}
-
-/* utility classes */
-.truncate {
-  // truncate text if it exceeds parent
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }

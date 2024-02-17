@@ -1,10 +1,16 @@
-@use 'base.scss';
+@use "_base.scss";
+@use "_colors.scss";
 
 // section style
 //colors
 
 section {
-  margin: var(--space-xl) 0;
+  margin: var(--space-md) 0;
+  padding: var(--space-sm) 0;
+
+  @media (min-width: $md) {
+    margin: var(--space-xl) 0;
+  }
 
   // for the styleguide page to show the section colors
   &.display {
@@ -12,30 +18,29 @@ section {
   }
 
   &.green {
-    background: var(--light-green);
+    background: var(--green-100);
   }
 
   &.blue {
-    background: var(--light-blue);
+    background: var(--blue-100);
   }
 
   &.grey {
-    background: var(--light-grey)
+    background: var(--platinum-100);
   }
 
   &.dark-blue {
-    background: var(--blue)
+    background: var(--blue-600);
   }
 
   a {
-
     &.silent {
-      color: var(--ink);
-      text-decoration: none
+      color: var(--platinum-800);
+      text-decoration: none;
     }
 
     &:visited {
-      color: transparent
+      color: transparent;
     }
   }
 }
@@ -46,11 +51,10 @@ section {
   padding: 0 5%;
   margin: 0 auto;
 
-  @media (max-width:$md) {
-    padding: 0 3%;
+  @media (min-width: $md) {
+    padding: 0rem 5%;
   }
 }
-
 
 hr {
   border: none;
@@ -63,44 +67,40 @@ hr.light {
 
 //the blue secondary heading
 .sub-heading {
-  color: var(--blue);
+  color: var(--blue-600);
   font-weight: bold;
-  margin: 0rem;
 }
 
 .center {
   text-align: center;
 }
 
-
 .compressed {
-  @media (min-width:$lg) {
+  @media (min-width: $lg) {
     max-width: 50%;
   }
 }
 
 a {
-  color: var(--blue);
+  color: var(--blue-600);
 
   &.silent {
-    color: var(--ink);
-    text-decoration: none
+    color: var(--platinum-800);
+    text-decoration: none;
   }
 
   &:visited {
-    color: var(--blue);
-
+    color: var(--blue-600);
   }
-
 }
 
-.note {
-  background: var(--light-blue);
+.side-note {
+  background: var(--blue-600);
   padding: var(--space-md);
   margin: var(--space-lg) 0;
 
   &:before {
-    content: 'Side Note:';
+    content: "Side Note:";
     font-weight: bold;
     margin-right: var(--space-sm);
     margin-bottom: var(--space-sm);
@@ -109,4 +109,24 @@ a {
     display: block;
     line-height: 1;
   }
+}
+
+.astro-social-share {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: start;
+  align-items: center;
+}
+
+a.social-share-btn {
+  display: block;
+  width: var(--space-lg);
+  height: var(--space-lg);
+  padding: 0;
+  margin: 0;
+}
+
+.social-icon {
+  width: 100%;
+  height: 100%;
 }

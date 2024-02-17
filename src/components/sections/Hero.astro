@@ -8,11 +8,6 @@ import hero_image from '../../assets/images/family.jpg';
 <style lang="scss">
   @use '../../styles/_base.scss';
 
-  section {
-    margin-top: var(--space-xl);
-    margin-bottom: var(--space-xxl);
-  }
-
   .grid {
     display: grid;
     align-items: center;
@@ -26,8 +21,13 @@ import hero_image from '../../assets/images/family.jpg';
     .hero-content {
       h1 {
         font-weight: bold;
+        text-wrap: balance;
         margin: 0;
         padding: 0;
+      }
+
+      .subtitle {
+        margin-top: var(--space-lg);
       }
     }
   }
@@ -42,7 +42,7 @@ import hero_image from '../../assets/images/family.jpg';
     width: auto;
 
     @media (max-width: base.$lg) {
-      display: none;
+      display: flex;
     }
   }
 
@@ -56,8 +56,8 @@ import hero_image from '../../assets/images/family.jpg';
   <div class="container">
     <div class="grid">
       <div class="hero-content">
-        <p class="sub-heading">Our Value</p>
-        <h1>Your Go-To Home Buying Professionals</h1>
+        <p class="sub-heading">Our Commitment</p>
+        <h1>A Reliable & Transparent Home Buying Partner</h1>
         <p class="subtitle">Benefit from our exclusive wholesale pricing and highly experienced mortgage advisors.</p>
       </div>
       <div class="hero-image-wrapper">

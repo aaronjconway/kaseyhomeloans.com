@@ -20,6 +20,8 @@ const topPosts = posts.slice(0, 4);
 
 <Layout title={'Learning Center'} image={'todo'} description={'todo'}>
   <style lang="scss">
+    @use '../../styles/base.scss';
+
     .learn-wrapper {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -34,37 +36,32 @@ const topPosts = posts.slice(0, 4);
       border: 1px solid blue;
     }
 
-    .sub-heading {
-      color: var(--blue);
-      font-weight: bold;
-      padding-bottom: var(--space-xs);
-      margin: 0rem;
-    }
-
     h1 {
       margin-top: 0;
+    }
+
+    .heading {
+      @media (min-width: base.$lg) {
+        max-width: 50%;
+      }
     }
   </style>
 
   <!-- <PageHeader title={postIndex.data.title} /> -->
   <section>
     <div class="container">
-      <div class="sub-heading">Accurate & honest advice</div>
-      <h1>Transparent Home Buying Education</h1>
-      <p>
-        Finding high quality home buying information online can be incredibly difficult. We take pride in writing and
-        maintaing these articles to provide you with a true insight into the home buying process. Nobody likes an
-        emotional rollercoster.
-      </p>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <div class="top-posts-wrapper">
-        <TopPosts posts={topPosts} />
+      <div class="heading">
+        <p class="sub-heading">Accurate & Honest</p>
+        <h1>Transparent Home Buying Education</h1>
+        <p>
+          Finding high quality home buying information online can be incredibly difficult. We take pride in writing
+          accurate articles to set the right expectations.
+        </p>
       </div>
     </div>
   </section>
+  <TopPosts posts={topPosts} />
+  <!-- todo: change from banner to navigation or somethign -->
   <LearnBanner />
   <LearnCalltoAction />
 </Layout>

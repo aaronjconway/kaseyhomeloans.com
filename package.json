@@ -11,28 +11,31 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^9.0.0",
-    "@astrojs/mdx": "^2.0.3",
+    "@astrojs/mdx": "^2.1.1",
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.4",
     "@astrojs/svelte": "^5.0.3",
+    "@iconify-json/simple-icons": "^1.1.91",
+    "astro": "^4.1.1",
+    "title": "^3.5.3"
+  },
+  "devDependencies": {
     "@iconify-json/devicon": "^1.1.35",
     "@iconify-json/ic": "^1.1.17",
     "@iconify-json/openmoji": "^1.1.46",
     "@splidejs/svelte-splide": "^0.2.9",
     "@supabase/supabase-js": "^2.39.3",
-    "astro": "^4.1.1",
-    "astro-icon": "^1.0.4",
-    "sharp": "^0.33.2",
-    "svelte": "^4.2.9"
-  },
-  "devDependencies": {
     "@types/node": "20.10.6",
+    "astro-icon": "^1.0.4",
     "astro-seo": "^0.8.0",
+    "astro-social-share": "^1.2.1",
     "eslint": "^8.56.0",
     "postcss": "^8.4.32",
-    "prettier": "^3.2.4",
+    "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "sass": "^1.70.0",
-    "typescript": "5.3.3"
+    "sharp": "^0.33.2",
+    "svelte": "^4.2.9",
+    "typescript": "^5.3.3"
   }
 }

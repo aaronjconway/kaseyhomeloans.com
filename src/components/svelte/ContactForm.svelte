@@ -4,7 +4,7 @@
   async function submit(e: SubmitEvent) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget as HTMLFormElement);
-    const response = await fetch('/api/feedback', {
+    const response = await fetch('/api/contact', {
       method: 'POST',
       body: formData,
     });
@@ -60,7 +60,7 @@
         border: 1px solid var(--mid-grey);
         border-radius: 4px;
         justify-content: start;
-        height: 5rem;
+        height: var(--space-xl);
       }
     }
   }
