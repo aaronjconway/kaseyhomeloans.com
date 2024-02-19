@@ -1,0 +1,210 @@
+---
+/* 
+
+Input: 
+- posts: an array of posts to pass in
+- tag: can take a tag to filter on
+- offset: posts to offset.
+- category: take a category to filter on
+- some other param for looking up related - maybe use typesense semantic semantic search
+- amount of posts to return
+
+Output: creates a bunch of small posts based on the params
+*/
+
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import FormattedDate from './FormattedDate.astro';
+
+const { posts, offset } = Astro.props;
+
+interface Post {
+  id: string;
+  slug: string;
+  body: string;
+  collection: string;
+  data: {
+    title: string;
+    description: string;
+    date: Date;
+    image: string;
+    author: string;
+    categories: string[];
+    tags: string[];
+    draft: boolean;
+  };
+  render: () => Promise<void>;
+}
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*');
+---
+
+<style lang="scss">
+  @use '@/styles/base.scss';
+
+  .wrapper {
+    a {
+      color: var(--platinum-800);
+      text-decoration: none;
+    }
+
+    hr {
+      margin-top: var(--space-lg);
+      background-color: var(--mid-grey);
+      width: 100%;
+    }
+
+    //main title for container
+    .title {
+      font-size: var(--text-lg);
+      font-weight: bold;
+      margin-bottom: var(--space-xl);
+    }
+
+    .post-title {
+      font-size: var(--text);
+      font-weight: bold;
+      margin: var(--space-sm) 0;
+    }
+
+    .post-description {
+      font-size: var(--text);
+      margin: var(--space-xs) 0 var(--space-md);
+    }
+
+    .small-post-wrapper {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 3rem;
+      margin-top: calc(-1 * var(--space-md));
+    }
+
+    .small-post {
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        background-color: var(--platinum-100);
+        border-radius: 4px;
+        transition: all 200ms ease-in-out;
+      }
+
+      &:not(:hover) {
+        background-color: inherit;
+        border-radius: 4px;
+        transition: all 200ms ease-in-out;
+      }
+    }
+
+    .small-image-wrapper {
+      // display: flex;
+      display: none;
+      max-height: 130px;
+      flex-direction: column;
+      -webkit-box-flex: 1;
+      border-radius: 4px;
+      flex: 1;
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top;
+    }
+
+    .image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .small-post-content {
+      display: flex;
+      flex-direction: column;
+      margin-top: var(--space-sm);
+      // margin-left: var(--space-md);
+
+      .heading {
+        font-size: var(--text);
+        font-weight: bold;
+        margin-bottom: var(--space-sm);
+      }
+
+      .description {
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-sm);
+      }
+
+      .author {
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-sm);
+      }
+    }
+
+    // desktop
+    @media (min-width: base.$lg) {
+      .small-post-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-lg);
+        margin: 0 calc(-1 * var(--space-sm));
+      }
+
+      .small-post {
+        display: flex;
+        flex-direction: column;
+        padding: var(--space-sm);
+
+        &:hover {
+          background-color: var(--platinum-100);
+          border-radius: 4px;
+          transition: all 200ms ease-in-out;
+        }
+
+        &:not(:hover) {
+          background-color: inherit;
+          border-radius: 4px;
+          transition: all 200ms ease-in-out;
+        }
+      }
+    }
+  }
+
+  section {
+    margin-bottom: 0;
+  }
+</style>
+
+<!-- TODO: create a link to the author page-->
+
+<section>
+  <div class="container">
+    <div class="wrapper">
+      <!--  TODO: implemenet typesense semantic search -->
+      <!-- "looking for something specific? try our tools or 
+      ai search.-->
+      <div class="small-post-wrapper">
+        {
+          posts.map((post: Post) => (
+            <div class="small-post">
+              <a href={`/learn/${post.slug}`}>
+                <figure class="small-image-wrapper">
+                  <Image height={300} class="image" src={images[`../assets/images/${post.data.image}`]()} alt={''} />
+                </figure>
+              </a>
+              <div class="small-post-content">
+                <a href={`/learn/${post.slug}`}>
+                  <div class="heading">{post.data.title}</div>
+                </a>
+                <div class="description">{post.data.description}</div>
+                <div class="author">
+                  <FormattedDate date={post.data.date} />• {post.data.author}
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,94 @@
+{
+  "categories": [
+    {
+      "title": "Mortgage Basics",
+      "summary": "Covering fundamental concepts related to mortgages such as types of mortgages, interest rates, down payments, and mortgage terminology.",
+      "subtitle": "",
+      "path": "mortgage-basics"
+    },
+    {
+      "title": "Home Buying Tips",
+      "summary": "Providing advice and tips for individuals navigating the home buying process, including finding the right property, understanding mortgage pre-approval, and negotiating offers.",
+      "subtitle": "",
+      "path": "home-buying-tips"
+    },
+    {
+      "title": "Mortgage Rates and Trends",
+      "summary": "Offering insights into current mortgage rates, market trends, and factors influencing interest rates.",
+      "subtitle": "",
+      "path": "mortgage-rates-and-trends"
+    },
+    {
+      "title": "Financial Planning",
+      "summary": "Discussing financial planning strategies related to mortgages, budgeting for a down payment, improving credit scores, and managing debt.",
+      "subtitle": "",
+      "path": "financial-planning"
+    },
+    {
+      "title": "Loan Programs",
+      "summary": "Exploring various loan programs available to homebuyers, including FHA loans, VA loans, conventional mortgages, and jumbo loans.",
+      "subtitle": "",
+      "path": "loan-programs"
+    },
+    {
+      "title": "Refinancing",
+      "summary": "Explaining the process and benefits of refinancing a mortgage, including lowering monthly payments, reducing interest rates, and accessing home equity.",
+      "subtitle": "",
+      "path": "refinancing"
+    },
+    {
+      "title": "Homeownership Tips",
+      "summary": "Providing guidance on maintaining and managing a home, understanding homeowners insurance, property taxes, and home maintenance.",
+      "subtitle": "",
+      "path": "homeownership-tips"
+    },
+    {
+      "title": "Real Estate Market Analysis",
+      "summary": "Analyzing current trends in the real estate market, housing affordability, regional market variations, and forecasts.",
+      "subtitle": "",
+      "path": "real-estate-market-analysis"
+    },
+    {
+      "title": "Legal and Regulatory Updates",
+      "summary": "Keeping readers informed about changes in mortgage laws, regulations, and government programs that impact homeownership.",
+      "subtitle": "",
+      "path": "legal-and-regulatory-updates"
+    },
+    {
+      "title": "Mortgage Calculators and Tools",
+      "summary": "Offering tools and calculators to help readers estimate mortgage payments, affordability, refinance savings, and compare loan options.",
+      "subtitle": "",
+      "path": "mortgage-calculators-and-tools"
+    },
+    {
+      "title": "Home Equity and Investment",
+      "summary": "Exploring strategies for leveraging home equity, using home equity for investment purposes, and building wealth through real estate.",
+      "subtitle": "",
+      "path": "home-equity-and-investment"
+    },
+    {
+      "title": "Credit and Financing Tips",
+      "summary": "Providing guidance on improving credit scores, managing debt responsibly, and navigating financing options for different financial situations.",
+      "subtitle": "",
+      "path": "credit-and-financing-tips"
+    },
+    {
+      "title": "Home Buying Mistakes to Avoid",
+      "summary": "Identifying common pitfalls and mistakes to avoid when purchasing a home, such as overextending financially, neglecting inspections, or skipping important paperwork.",
+      "subtitle": "",
+      "path": "home-buying-mistakes-to-avoid"
+    },
+    {
+      "title": "Local Market Insights",
+      "summary": "Offering localized content specific to different regions or cities, including housing market trends, neighborhood profiles, and community highlights.",
+      "subtitle": "",
+      "path": "local-market-insights"
+    },
+    {
+      "title": "Home Renovation and Improvement",
+      "summary": "Discussing renovation financing options, DIY home improvement projects, and adding value to a property through upgrades.",
+      "subtitle": "",
+      "path": "home-renovation-and-improvement"
+    }
+  ]
+}

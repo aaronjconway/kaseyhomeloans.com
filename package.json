@@ -1,23 +1,24 @@
 {
-  "name": "astroplate",
+  "name": "Kaseyhomeloans.com",
   "version": "0.1",
-  "description": "anther attempt to get khl working on astro",
+  "description": "The Kasey Home Loans main website.",
   "private": true,
   "scripts": {
-    "dev": "npm run generate-json && astro dev",
-    "build": "npm run generate-json && astro build",
-    "preview": "astro preview",
-    "generate-json": "node scripts/jsonGenerator.js"
+    "dev": "npm run && astro dev",
+    "build": "npm run && astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/check": "^0.5.4",
     "@astrojs/cloudflare": "^9.0.0",
     "@astrojs/mdx": "^2.1.1",
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.4",
     "@astrojs/svelte": "^5.0.3",
     "@iconify-json/simple-icons": "^1.1.91",
-    "astro": "^4.1.1",
-    "title": "^3.5.3"
+    "astro": "^4.4.0",
+    "title": "^3.5.3",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
     "@iconify-json/devicon": "^1.1.35",
@@ -35,7 +36,6 @@
     "prettier-plugin-astro": "^0.13.0",
     "sass": "^1.70.0",
     "sharp": "^0.33.2",
-    "svelte": "^4.2.9",
-    "typescript": "^5.3.3"
+    "svelte": "^4.2.9"
   }
 }

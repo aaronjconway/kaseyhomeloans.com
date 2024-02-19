@@ -1,6 +1,19 @@
 ---
-const { tags } = Astro.props;
-//todo:need a way of getting the tag link
+const { data } = Astro.props;
+
+/*
+ * The Word tag here is used becuase it used to be called a tag.
+ * I've changed this to categories and removed tags.
+ * leaving the word tag becuase it still kinda is.
+ */
+
+//TODO: move this to the utils.js
+//takes a name, lowercases and replaces spaces for hypens
+function convertToHref(str: string) {
+  str = str.toLowerCase();
+  str = str.replace(/ /g, '-');
+  return str;
+}
 ---
 
 <style lang="scss">
@@ -36,8 +49,8 @@ const { tags } = Astro.props;
 
 <div class="wrapper">
   {
-    tags.map((tag: string) => (
-      <a class="tag" href="">
+    data.map((tag: string) => (
+      <a class="tag" href={'/learn/categories/' + convertToHref(tag)}>
         {tag}
       </a>
     ))

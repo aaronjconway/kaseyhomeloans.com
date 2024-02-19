@@ -1,26 +1,30 @@
 ---
 import Pagination from '@/components/Pagination.astro';
-import PostPreview from '@/components/PostPreview.astro';
 import TopPosts from '@/components/TopPosts.astro';
 import Layout from '@/layouts/Layout.astro';
 import LearnBanner from '@/components/sections/LearnBanner.astro';
 import LearnCalltoAction from '@/components/sections/LearnCalltoAction.astro';
+import SmallPosts from '@/components/SmallPosts.astro';
 
-import PostSidebar from '@/components/PostSidebar.astro';
+// TODO:what is this.
+// import PostSidebar from '@/components/PostSidebar.astro';
 
 import { getCollection } from 'astro:content';
 
-const posts = await getCollection('learn');
+const all_posts = await getCollection('learn');
 
 // sort posts by date
-posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+all_posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const topPosts = posts.slice(0, 4);
+const page_count = Math.ceil(all_posts.length / 6);
+
+const topPosts = all_posts.slice(0, 4);
+const first_page_posts = all_posts.slice(4, 10);
 ---
 
 <Layout title={'Learning Center'} image={'todo'} description={'todo'}>
   <style lang="scss">
-    @use '../../styles/base.scss';
+    @use '@/styles/base.scss';
 
     .learn-wrapper {
       display: grid;
@@ -28,13 +32,14 @@ const topPosts = posts.slice(0, 4);
       width: 100%;
     }
 
-    .side-bar {
-      display: flex;
-      flex-direction: col;
-      position: fixed;
-      background: red;
-      border: 1px solid blue;
-    }
+    // do we need a sidebar?
+    // .side-bar {
+    //   display: flex;
+    //   flex-direction: col;
+    //   position: fixed;
+    //   background: red;
+    //   border: 1px solid blue;
+    // }
 
     h1 {
       margin-top: 0;
@@ -44,6 +49,10 @@ const topPosts = posts.slice(0, 4);
       @media (min-width: base.$lg) {
         max-width: 50%;
       }
+    }
+
+    h2 {
+      margin-top: var(--space-xl);
     }
   </style>
 
@@ -61,7 +70,12 @@ const topPosts = posts.slice(0, 4);
     </div>
   </section>
   <TopPosts posts={topPosts} />
-  <!-- todo: change from banner to navigation or somethign -->
+  <!--  TODO: change name from banner to navigation and mke sure it's a11y -->
   <LearnBanner />
+  <div class="container">
+    <h2 class="title">More Posts</h2>
+  </div>
+  <SmallPosts offset={4} posts={first_page_posts} />
+  <Pagination page_count={page_count} />
   <LearnCalltoAction />
 </Layout>

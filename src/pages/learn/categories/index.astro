@@ -1,0 +1,90 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import LearnBanner from '@/components/sections/LearnBanner.astro';
+import LearnCalltoAction from '@/components/sections/LearnCalltoAction.astro';
+// import { categories } from '@/lib/data/categories.tsx';
+import { categories } from '@/content/categories/categories.json';
+---
+
+<Layout title={'Learning Center'} image={'todo'} description={'todo'}>
+  <style lang="scss">
+    @use '@/styles/base.scss';
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+
+      .cat-wrapper {
+        padding: var(--space-sm);
+        a {
+          color: var(--platinum-body);
+          text-decoration: none;
+        }
+
+        .heading {
+          font-size: var(--text-md);
+          font-weight: bold;
+          margin-bottom: var(--space-sm);
+          width: 100%;
+        }
+      }
+
+      @media (min-width: base.$lg) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-xl);
+        .cat-wrapper {
+          padding: var(--space-sm);
+          a {
+            color: var(--platinum-body);
+            text-decoration: none;
+          }
+
+          .heading {
+            font-size: var(--text-md);
+            font-weight: bold;
+            margin-bottom: var(--space-sm);
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin-top: var(--space-xl);
+    }
+  </style>
+
+  <!-- <PageHeader title={postIndex.data.title} /> -->
+  <section>
+    <div class="container">
+      <div class="heading">
+        <h1>Categories</h1>
+        <p>Brow</p>
+      </div>
+    </div>
+  </section>
+  <!--  TODO: change name from banner to navigation and mke sure it's a11y -->
+  <LearnBanner />
+  <section>
+    <div class="container">
+      <div class="wrapper">
+        {
+          categories.map((item) => (
+            <div class="cat-wrapper">
+              <a href={'/learn/categories/' + item.path}>
+                <div class="heading">{item.title}</div>
+              </a>
+              <div class="description">{item.summary}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <LearnCalltoAction />
+</Layout>

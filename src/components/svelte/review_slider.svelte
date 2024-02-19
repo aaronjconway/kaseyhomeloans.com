@@ -86,7 +86,7 @@
 </Splide>
 
 <style lang="scss">
-  @use '../../styles/base.scss';
+  @use '@/styles/base.scss';
 
   .review-card {
     display: flex;

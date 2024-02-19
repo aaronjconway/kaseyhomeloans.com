@@ -34,12 +34,12 @@ const path = Astro.url.href;
         </div>
         <div class="details">
           <div class="post-author">
-            Written by <a href="todo: link to author">{post.data.author}</a> •
+            Written by <a href=" TODO: link to author">{post.data.author}</a> •
             <FormattedDate date={post.data.date} />
           </div>
-          <Tags tags={post.data.tags} />
+          <Tags data={post.data.categories} />
           <div class="social-wrapper">
-            <!-- todo:pass in an image -->
+            <!--  TODO:pass in an image -->
             <SocialShare description={post.data.description} title="Page Title" url={path} />
           </div>
         </div>
@@ -50,13 +50,13 @@ const path = Astro.url.href;
       <!-- <div class="sidebar">
         <Sidebar />
       </div> -->
-      <!-- todo: make a related posts -->
+      <!--  TODO: make a related posts -->
     </div>
   </div>
 </Layout>
 
 <style lang="scss">
-  @use '../../styles/base.scss';
+  @use '@/styles/base.scss';
 
   .social-wrapper {
     // display: flex;

@@ -29,7 +29,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
 ---
 
 <style lang="scss">
-  @use '../styles/_base.scss';
+  @use '@/styles/base.scss';
 
   a {
     color: var(--platinum-800);
@@ -62,7 +62,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
         margin-top: calc(-1 * var(--space-md));
       }
       .small-post {
-        margin: var(--space-sm);
         padding: var(--space-sm);
       }
     }
@@ -92,13 +91,18 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
   .post-title {
     font-size: var(--text);
     font-weight: bold;
-    margin: var(--space-xs) 0;
+    margin: var(--space-sm) 0;
+  }
+
+  .post-description {
+    font-size: var(--text);
+    margin: var(--space-xs) 0 var(--space-md);
   }
 
   .small-post {
     margin-bottom: var(--space-sm);
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1.618fr;
     margin: var(--space-sm) 0;
     padding: var(--space-sm) 0;
 
@@ -117,6 +121,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
 
   .small-image-wrapper {
     display: flex;
+    max-height: 130px;
     flex-direction: column;
     -webkit-box-flex: 1;
     border-radius: 4px;
@@ -175,6 +180,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
         </a>
         <a href={`learn/${firstPost.slug}`}>
           <div class="post-title">{firstPost.data.title}</div>
+          <div class="post-description">{firstPost.data.description}</div>
           <div class="post-author">
             <FormattedDate date={firstPost.data.date} />
             • {firstPost.data.author}

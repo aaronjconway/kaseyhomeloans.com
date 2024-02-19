@@ -53,7 +53,7 @@
     color: var(--platinum-800);
     button {
       color: var(--platinum-800);
-      //todo: need a better way of doing this than turning off in each scoped file.
+      // TODO: need a better way of doing this than turning off in each scoped file.
       //currently we have hover:filter in the button.scss file.
       &:hover {
         filter: none;

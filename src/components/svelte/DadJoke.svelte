@@ -115,7 +115,7 @@
 </div>
 
 <style lang="scss">
-  @use '../../styles/base.scss';
+  @use '@/styles/base.scss';
 
   a.btn {
     color: white;

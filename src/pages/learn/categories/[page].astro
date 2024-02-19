@@ -1,0 +1,69 @@
+---
+import Pagination from '@/components/Pagination.astro';
+import Layout from '@/layouts/Layout.astro';
+import LearnBanner from '@/components/sections/LearnBanner.astro';
+import LearnCalltoAction from '@/components/sections/LearnCalltoAction.astro';
+import SmallPosts from '@/components/SmallPosts.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  //todo I hate this is there no better way of using json as
+  //both a collection and data for other things?
+  // get better at using json as collection
+
+  const data = await getEntry('categories', 'categories');
+  const categories = data.data.categories;
+  const posts = await getCollection('learn');
+
+  return categories.map((entry) => ({
+    params: { page: entry.path },
+    props: { entry, posts },
+  }));
+}
+
+const { entry, posts } = Astro.props;
+
+console.log(entry)
+
+let filtered_posts = posts.filter((x) => x.data.categories.includes(entry.title));
+---
+
+<Layout title={'Learning Center'} image={'todo'} description={'todo'}>
+  <!--  TODO: make a search box-->
+  <!--  TODO: change name from banner to navigation and mke sure it's a11y -->
+  
+  <div class="learn-grid">
+    <SmallPosts posts={filtered_posts} />
+
+    <!-- <Pagination data={page} /> -->
+    <div class="nav-wrapper">
+      <LearnBanner />
+    </div>
+    <LearnCalltoAction />
+  </div>
+</Layout>
+
+<style lang="scss">
+  @use '@/styles/base.scss';
+
+  .learn-grid {
+    @media (min-width: base.$lg) {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      .nav-wrapper {
+        order: -1;
+      }
+    }
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  .heading {
+    @media (min-width: base.$lg) {
+      max-width: 50%;
+    }
+  }
+</style>

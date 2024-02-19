@@ -6,7 +6,7 @@ import hero_image from '../../assets/images/family.jpg';
 ---
 
 <style lang="scss">
-  @use '../../styles/_base.scss';
+  @use '@/styles/base.scss';
 
   .grid {
     display: grid;
@@ -19,14 +19,23 @@ import hero_image from '../../assets/images/family.jpg';
     }
 
     .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
       h1 {
         font-weight: bold;
-        text-wrap: balance;
+        text-wrap: pretty;
         margin: 0;
         padding: 0;
       }
 
-      .subtitle {
+      .sub-heading {
+        margin-top: 0;
+        line-height: 1;
+      }
+
+      .sub-title {
         margin-top: var(--space-lg);
       }
     }
@@ -58,7 +67,7 @@ import hero_image from '../../assets/images/family.jpg';
       <div class="hero-content">
         <p class="sub-heading">Our Commitment</p>
         <h1>A Reliable & Transparent Home Buying Partner</h1>
-        <p class="subtitle">Benefit from our exclusive wholesale pricing and highly experienced mortgage advisors.</p>
+        <p class="sub-title">Benefit from our exclusive wholesale pricing and highly experienced mortgage advisors.</p>
       </div>
       <div class="hero-image-wrapper">
         <Image class="hero-image" src={hero_image} height={600} alt="test" />

@@ -1,10 +1,17 @@
 ---
 //init
 import { Icon } from 'astro-icon/components';
+
+//this is some of the dumbest and worst css
+// I'm learning be nice.
 ---
 
 <style lang="scss">
-  @use '../../styles/_base.scss';
+  @use '@/styles/base.scss';
+
+  .main-heading {
+    text-align: center;
+  }
 
   .feature-content {
     display: flex;
@@ -68,7 +75,7 @@ import { Icon } from 'astro-icon/components';
 
 <section>
   <div class="container">
-    <div class="feature-content">
+    <div class="main-heading">
       <p class="sub-heading">Why work with us?</p>
       <h2 class="after">The Home Buying Benefits You Deserve</h2>
       <p class="subtitle">Accept nothing less.</p>

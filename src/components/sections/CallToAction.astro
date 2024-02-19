@@ -5,12 +5,12 @@ import DadJoke from '../../components/svelte/DadJoke.svelte';
 ---
 
 <style lang="scss">
-  @use '../../styles/_base.scss';
+  @use '@/styles/base.scss';
 
   .grid {
     display: grid;
     padding: 0 calc(2 * var(--space-xl) + 10px);
-    padding-top: calc(2 * var(--space-xl) + 10px);
+    padding-top: calc(var(--space-xl) + 10px);
     padding-bottom: calc(var(--space-xl) + 10px);
     align-items: center;
     justify-content: center;

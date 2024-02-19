@@ -42,7 +42,7 @@
 </div>
 
 <style lang="scss">
-  @use '../../styles/_base.scss';
+  @use '@/styles/base.scss';
 
   .error {
     display: flex;

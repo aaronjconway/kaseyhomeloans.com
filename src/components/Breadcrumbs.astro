@@ -11,7 +11,14 @@ let parts = [
 ];
 
 paths.forEach((text, i) => {
+
+  //if the text is a number then add the word page to it.
+  if (!isNaN(parseInt(text))) {
+    text = 'Page ' + text
+  } 
+
   const href = `/${paths.slice(0, i + 1).join('/')}`;
+  //add the word page if it's a number
   parts.push({
     text: title(text.replace(/[-_]/g, ' ')),
     href,

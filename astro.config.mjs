@@ -5,7 +5,7 @@ import { defineConfig } from 'astro/config';
 import icon from 'astro-icon';
 // import sitemap from "@astrojs/sitemap";
 
-//todo: vimportant for production. make sure to only include the icons that are necessary
+// TODO: vimportant for production. make sure to only include the icons that are necessary
 import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config

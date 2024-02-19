@@ -3,9 +3,11 @@ import { defineCollection, z } from 'astro:content';
 //pages in the learn content folder = equivalent to blog
 const learnCollection = defineCollection({
   schema: z.object({
-    //testing lengt
-    title: z.string().max(50),
-    description: z.string().max(70),
+    //todo set a length for the title and sesc
+    // title: z.string().max(50),
+    // description: z.string().max(70),
+    title: z.string(),
+    description: z.string(),
     date: z.coerce.date(),
     image: z.string(),
     author: z.string(),
@@ -48,9 +50,25 @@ const pagesCollection = defineCollection({
   }),
 });
 
+// Pages collection schema
+const categoriesCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    categories: z.array(
+      z.object({
+        title: z.string(),
+        summary: z.string(),
+        subtitle: z.string(),
+        path: z.string(),
+      })
+    ),
+  }),
+});
+
 // Export collections
 export const collections = {
   learn: learnCollection,
   authors: authorsCollection,
   pages: pagesCollection,
+  categories: categoriesCollection,
 };

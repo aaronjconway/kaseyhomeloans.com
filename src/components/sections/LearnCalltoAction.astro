@@ -3,7 +3,7 @@
 ---
 
 <style lang="scss">
-  @use '../../styles/_base.scss';
+  @use '@/styles/base.scss';
 
   .grid {
     display: grid;
@@ -18,7 +18,7 @@
 
     @media (min-width: base.$lg) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap:var(--space-xxl);
+      gap: var(--space-xxl);
       margin: var(--space-xl) 0;
       justify-content: center;
       align-items: center;
