@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 
 const { entry, posts } = Astro.props;
 
-console.log(entry)
+console.log(entry);
 
 let filtered_posts = posts.filter((x) => x.data.categories.includes(entry.title));
 ---
@@ -31,7 +31,7 @@ let filtered_posts = posts.filter((x) => x.data.categories.includes(entry.title)
 <Layout title={'Learning Center'} image={'todo'} description={'todo'}>
   <!--  TODO: make a search box-->
   <!--  TODO: change name from banner to navigation and mke sure it's a11y -->
-  
+
   <div class="learn-grid">
     <SmallPosts posts={filtered_posts} />
 

@@ -47,18 +47,33 @@ export interface Props {
         }
       });
     </script>
-  </head>
-  <body>
-    <Navbar />
-    <Breadcrumbs />
-    <main id="main">
-      <slot />
-    </main>
-    <Footer />
-    <style is:global>
-      img {
-        content-visibility: auto;
-      }
-    </style>
-  </body>
+    <script>
+      window.Papercups = {
+        config: {
+          accountId: '106cbf51-9ce1-4b68-bd87-ee9693d76983',
+          title: 'Welcome to Kasey Home Loans',
+          subtitle: 'Ask us anything in the chat window below 😊',
+          primaryColor: '#1890ff',
+          greeting: '',
+          newMessagePlaceholder: 'Start typing...',
+          baseUrl: 'https://app.papercups.io',
+        },
+      };
+    </script>
+    <script type="text/javascript" async defer src="https://app.papercups.io/widget.js"></script>
+    ></head
+  >
 </html>
+<body>
+  <Navbar />
+  <Breadcrumbs />
+  <main id="main">
+    <slot />
+  </main>
+  <Footer />
+  <style is:global>
+    img {
+      content-visibility: auto;
+    }
+  </style>
+</body>
