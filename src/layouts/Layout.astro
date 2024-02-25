@@ -47,6 +47,7 @@ export interface Props {
         }
       });
     </script>
+
     <script>
       window.Papercups = {
         config: {
@@ -61,19 +62,18 @@ export interface Props {
       };
     </script>
     <script type="text/javascript" async defer src="https://app.papercups.io/widget.js"></script>
-    ></head
-  >
+  </head>
+  <body>
+    <Navbar />
+    <Breadcrumbs />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <style is:global>
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
 </html>
-<body>
-  <Navbar />
-  <Breadcrumbs />
-  <main id="main">
-    <slot />
-  </main>
-  <Footer />
-  <style is:global>
-    img {
-      content-visibility: auto;
-    }
-  </style>
-</body>
