@@ -30,25 +30,6 @@ export interface Props {
 
     <!-- chat app -->
 
-    <script>
-      window.chatwootSettings = { position: 'right', type: 'expanded_bubble', launcherTitle: 'Chat with us' };
-      (function (d, t) {
-        var BASE_URL = '';
-        var g = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-        g.src = BASE_URL + '/packs/js/sdk.js';
-        g.defer = true;
-        g.async = true;
-        s.parentNode.insertBefore(g, s);
-        g.onload = function () {
-          window.chatwootSDK.run({
-            websiteToken: '1eJne7uDiDUSbGePX3arr6PG',
-            baseUrl: BASE_URL,
-          });
-        };
-      })(document, 'script');
-    </script>
-
     <!-- smooth scrolling -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
@@ -69,7 +50,26 @@ export interface Props {
         }
       });
     </script>
+    <script>
+      window.chatwootSettings = { position: 'right', type: 'expanded_bubble', launcherTitle: 'Get live help' };
+      (function (d, t) {
+        var BASE_URL = 'https://chatwoot-web.khl.zone';
+        var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src = BASE_URL + '/packs/js/sdk.js';
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+        g.onload = function () {
+          window.chatwootSDK.run({
+            websiteToken: '1eJne7uDiDUSbGePX3arr6PG',
+            baseUrl: BASE_URL,
+          });
+        };
+      })(document, 'script');
+    </script>
   </head>
+
   <body>
     <Navbar />
     <Breadcrumbs />
