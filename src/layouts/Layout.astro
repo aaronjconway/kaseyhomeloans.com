@@ -27,6 +27,23 @@ export interface Props {
     <meta name="generator" content={Astro.generator} />
     <!-- // TODO: add astro seo -->
     <script src="../lib/dropdown.js"></script>
+
+    <!-- paper cups-->
+    <script>
+      window.Papercups = {
+        config: {
+          accountId: '106cbf51-9ce1-4b68-bd87-ee9693d76983',
+          title: 'Welcome to Kasey Home Loans',
+          subtitle: 'Ask us anything in the chat window below 😊',
+          primaryColor: '#1890ff',
+          greeting: '',
+          newMessagePlaceholder: 'Start typing...',
+          showAgentAvailability: true,
+          baseUrl: 'https://papercups.khl.zone',
+        },
+      };
+    </script>
+    <script is:inline type="text/javascript" async defer src="https://app.papercups.io/widget.js"></script>
     <!-- smooth scrolling -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
@@ -47,21 +64,6 @@ export interface Props {
         }
       });
     </script>
-
-    <script>
-      window.Papercups = {
-        config: {
-          accountId: '106cbf51-9ce1-4b68-bd87-ee9693d76983',
-          title: 'Welcome to Kasey Home Loans',
-          subtitle: 'Ask us anything in the chat window below 😊',
-          primaryColor: '#1890ff',
-          greeting: '',
-          newMessagePlaceholder: 'Start typing...',
-          baseUrl: 'https://app.papercups.io',
-        },
-      };
-    </script>
-    <script type="text/javascript" async defer src="https://app.papercups.io/widget.js"></script>
   </head>
   <body>
     <Navbar />
