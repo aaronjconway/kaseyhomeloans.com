@@ -28,22 +28,27 @@ export interface Props {
     <!-- // TODO: add astro seo -->
     <script src="../lib/dropdown.js"></script>
 
-    <!-- paper cups-->
+    <!-- chat app -->
+
     <script>
-      window.Papercups = {
-        config: {
-          token: '106cbf51-9ce1-4b68-bd87-ee9693d76983',
-          title: 'Welcome to Kasey Home Loans',
-          subtitle: 'Ask us anything in the chat window below 😊',
-          primaryColor: '#1890ff',
-          greeting: '',
-          newMessagePlaceholder: 'Start typing...',
-          showAgentAvailability: true,
-          baseUrl: 'https://papercups.khl.zone',
-        },
-      };
+      window.chatwootSettings = { position: 'right', type: 'expanded_bubble', launcherTitle: 'Chat with us' };
+      (function (d, t) {
+        var BASE_URL = '';
+        var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src = BASE_URL + '/packs/js/sdk.js';
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+        g.onload = function () {
+          window.chatwootSDK.run({
+            websiteToken: '1eJne7uDiDUSbGePX3arr6PG',
+            baseUrl: BASE_URL,
+          });
+        };
+      })(document, 'script');
     </script>
-    <script is:inline type="text/javascript" async src="https://app.papercups.io/widget.js"></script>
+
     <!-- smooth scrolling -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
