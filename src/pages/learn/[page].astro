@@ -1,8 +1,7 @@
 ---
-
 /*  This is the pagination route for /learn/page
  *
-*/
+ */
 
 import Pagination from '@/components/Pagination.astro';
 import Layout from '@/layouts/Layout.astro';
@@ -22,12 +21,10 @@ const { page } = Astro.props;
 <Layout title={'Learning Center'} image={'todo'} description={'todo'}>
   <!--  TODO: make a search box-->
   <!--  TODO: change name from banner to navigation and mke sure it's a11y -->
+  <LearnBanner />
   <div class="learn-grid">
     <SmallPosts posts={page.data} />
     <Pagination data={page} />
-    <div class="nav-wrapper">
-      <LearnBanner />
-    </div>
     <LearnCalltoAction />
   </div>
 </Layout>
@@ -39,10 +36,6 @@ const { page } = Astro.props;
     @media (min-width: base.$lg) {
       display: grid;
       grid-template-columns: 1fr;
-
-      .nav-wrapper {
-        order: -1;
-      }
     }
   }
 

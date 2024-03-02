@@ -76,7 +76,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
     .small-post-wrapper {
       display: grid;
       width: 100%;
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(1, minmax(0,1fr));
       gap: 3rem;
       margin-top: calc(-1 * var(--space-md));
     }
@@ -101,7 +101,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
     .small-image-wrapper {
       // display: flex;
       display: flex;
-      max-height: 200px;
       flex-direction: column;
       -webkit-box-flex: 1;
       border-radius: 4px;
@@ -142,13 +141,13 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
       }
     }
 
-    // desktop
+    // for large screens
     @media (min-width: base.$lg) {
       .small-post-wrapper {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0,1fr));
         gap: var(--space-lg);
-        margin: 0 calc(-1 * var(--space-sm));
+        // margin: 0 calc(-1 * var(--space-sm));
       }
 
       .small-post {

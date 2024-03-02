@@ -17,8 +17,6 @@ export async function getStaticPaths() {
 
 const { entry, posts } = Astro.props;
 
-console.log(entry);
-
 let filtered_posts = posts.filter((post) => post.data.categories.includes(entry.name));
 ---
 
