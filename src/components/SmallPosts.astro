@@ -18,6 +18,7 @@ import FormattedDate from './FormattedDate.astro';
 
 const { posts, offset } = Astro.props;
 
+//data is the frontmattter: maybe refactor into frontmatter?
 interface Post {
   id: string;
   slug: string;
@@ -99,8 +100,8 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*'
 
     .small-image-wrapper {
       // display: flex;
-      display: none;
-      max-height: 130px;
+      display: flex;
+      max-height: 200px;
       flex-direction: column;
       -webkit-box-flex: 1;
       border-radius: 4px;

@@ -76,6 +76,8 @@ hr.light {
 }
 
 .compressed {
+
+  //when big
   @media (min-width: $lg) {
     max-width: 50%;
   }

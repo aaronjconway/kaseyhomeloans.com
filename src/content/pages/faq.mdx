@@ -1,14 +1,10 @@
 ---
-title: 'Privacy'
-meta_title: ''
-description: 'this is meta description'
-draft: false
+title: 'Un-Frequently Asked Questions | Kasey Home Loans'
+description: 'We focus on answering the questions that can be difficult to ask. How much do we make? Are you a middle man? etc.'
 ---
 
-import Accordion from '@/components/svelte/Accordion.svelte';
-import CompressedContent from '@/components/CompressedContent.astro';
-import Faqs from '@/components/faqs.astro';
+import Faqs from '@/components/FAQs.astro';
 
-<CompressedContent>
-  <Faqs />
-</CompressedContent>
+<div class = 'compressed' >
+  <Faqs client:load/>
+</div>

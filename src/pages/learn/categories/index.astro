@@ -2,8 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import LearnBanner from '@/components/sections/LearnBanner.astro';
 import LearnCalltoAction from '@/components/sections/LearnCalltoAction.astro';
-// import { categories } from '@/lib/data/categories.tsx';
-import { categories } from '@/content/categories/categories.json';
+import { categories } from '@/lib/data/categories';
 ---
 
 <Layout title={'Learning Center'} image={'todo'} description={'todo'}>
@@ -64,7 +63,9 @@ import { categories } from '@/content/categories/categories.json';
     <div class="container">
       <div class="heading">
         <h1>Categories</h1>
-        <p>Brow</p>
+        <p>Looking for something specfic?</p>
+        <p>try searcihng</p>
+        <!-- implement the search feature todo -->
       </div>
     </div>
   </section>
@@ -74,12 +75,13 @@ import { categories } from '@/content/categories/categories.json';
     <div class="container">
       <div class="wrapper">
         {
+          //a map of categories
           categories.map((item) => (
             <div class="cat-wrapper">
               <a href={'/learn/categories/' + item.path}>
-                <div class="heading">{item.title}</div>
+                <div class="heading">{item.name}</div>
               </a>
-              <div class="description">{item.summary}</div>
+              <div class="description">{item.description}</div>
             </div>
           ))
         }

@@ -91,25 +91,32 @@ h1,
 h2,
 .text--xl {
   font-size: var(--text-xl);
+  margin-top: var(--space-xl)
 }
 
 h3,
 .text--lg {
   font-size: var(--text-lg);
+  margin-top: var(--space-xl)
 }
 
 h4,
 .text--md {
   font-size: var(--text-md);
+  margin-top: var(--space-xl)
 }
 
+//small text
 .text--sm,
-small {
+ {
   font-size: var(--text-sm);
+  margin-top: var(--space-xl)
 }
 
+//tiny text
 .text--xs {
   font-size: var(--text-xs);
+  margin-top: var(--space-xl)
 }
 
 p {
