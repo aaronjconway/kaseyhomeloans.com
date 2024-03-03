@@ -1,0 +1,70 @@
+---
+/* leaving this for now becuase later we might want
+ * associated posts for each calculatro
+ */
+//------------------------------------------------------------------------
+/// import SmallPosts from '@/components/SmallPosts.astro';/
+// import { getCollection } from 'astro:content';
+//
+// const all_posts = await getCollection('learn');
+//
+// // sort posts by date
+// all_posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+//
+// const page_count = Math.ceil(all_posts.length / 6);
+//
+// const topPosts = all_posts.slice(0, 4);
+// const first_page_posts = all_posts.slice(4, 10);
+
+// ----------------------------------------------------------------------
+
+import Layout from '@/layouts/Layout.astro';
+import LearnBanner from '@/components/sections/LearnBanner.astro';
+import LearnCalltoAction from '@/components/sections/LearnCalltoAction.astro';
+---
+
+<Layout title={'Learning Center'} image={'todo'} description={'todo'}>
+  <section>
+    <div class="container">
+      <div class="heading">
+        <p class="sub-heading">Accurate & Honest</p>
+        <h1>Transparent Home Buying Education</h1>
+        <p>
+          Finding high quality home buying information online can be incredibly difficult. We take pride in writing
+          accurate articles to set the right expectations.
+        </p>
+      </div>
+    </div>
+  </section>
+  <LearnBanner />
+  <div class="container">
+    <h2 class="title">More Posts</h2>
+  </div>
+  <SmallPosts offset={4} posts={first_page_posts} />
+  <Pagination page_count={page_count} />
+  <LearnCalltoAction />
+</Layout>
+
+<style lang="scss">
+  @use '@/styles/base.scss';
+
+  .learn-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 100%;
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  .heading {
+    @media (min-width: base.$lg) {
+      max-width: 50%;
+    }
+  }
+
+  h2 {
+    margin-top: var(--space-xl);
+  }
+</style>
