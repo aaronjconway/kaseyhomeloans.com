@@ -1,15 +1,32 @@
 ---
 //
+
+const { title, subtitle } = Astro.props;
 ---
 
+<div class="container">
+  <h2 class="heading">{title ? title : 'Explore'}</h2>
+  <p>{subtitle ? subtitle : 'Explore more articles, guides and tools for home buying.'}</p>
+  <div class="wrapper">
+    <a href="/learn/categories/mortgage-basics" class="btn-secondary">First Time Home Buyers</a>
+    <a class="btn-secondary">Market Updates</a>
+    <a class="btn-secondary">Home Buying Guides</a>
+    <a class="btn-secondary">Calculators and Tools</a>
+    <a href="/learn/categories" class="btn-secondary">Browse All Categories</a>
+  </div>
+</div>
 <style lang="scss">
   @use '@/styles/base.scss';
 
   .heading {
     font-size: var(--text-xl);
     margin-bottom: var(--space-sm);
+  }
 
-    @media (min-width: base.$lg) {
+  //desktop
+  @media (min-width: base.$lg) {
+    .heading,
+    p {
       display: none;
     }
   }
@@ -33,8 +50,6 @@
     }
 
     @media (min-width: base.$md) {
-      display: grid;
-      grid-template-rows: 1fr;
       grid-template-columns: repeat(2, 1fr);
       justify-content: space-between;
       font-size: var(--text-sm);
@@ -43,8 +58,6 @@
     }
 
     @media (min-width: base.$lg) {
-      display: grid;
-      grid-template-rows: 1fr;
       grid-template-columns: repeat(5, 1fr);
       gap: var(--space-md);
       justify-content: space-between;
@@ -54,13 +67,3 @@
     }
   }
 </style>
-<div class="container">
-  <h2 class="heading">Explore</h2>
-  <div class="wrapper">
-    <a href="/learn/categories/mortgage-basics" class="btn-secondary">First Time Home Buyers</a>
-    <a class="btn-secondary">Market Updates</a>
-    <a class="btn-secondary">Home Buying Guides</a>
-    <a class="btn-secondary">Calculators and Tools</a>
-    <a href="/learn/categories" class="btn-secondary">Browse All Categories</a>
-  </div>
-</div>

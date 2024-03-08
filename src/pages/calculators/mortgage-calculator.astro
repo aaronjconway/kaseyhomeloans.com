@@ -19,9 +19,8 @@
 // ----------------------------------------------------------------------
 
 import Layout from '@/layouts/Layout.astro';
-import LearnBanner from '@/components/sections/LearnBanner.astro';
 import LearnCalltoAction from '@/components/sections/LearnCalltoAction.astro';
-import { Icon } from 'astro-icon/components';
+import MortgageCalculator from '@/components/svelte/MortgageCalculator.svelte';
 ---
 
 <Layout title={'Learning Center'} image={'todo'} description={'todo'}>
@@ -29,23 +28,19 @@ import { Icon } from 'astro-icon/components';
     <div class="container">
       <div class="heading">
         <p class="sub-heading"></p>
-        <h1>Calculators</h1>
-        <p>Built completely in house for efficiency and accuracy</p>
+        <h1>Mortgage Calculator</h1>
+        <!-- <p>Built completely in house for efficiency and accuracy</p> -->
       </div>
     </div>
   </section>
-  <LearnBanner title="Looking for something else?" />
-  <div class="container">
-    <div class="calc-wrapper">
-      <a class="silent" href="/calculators/mortgage-calculator ">
-        <div class="calc-card">
-          <Icon class="calc-icon" name="ic:twotone-percent" />
-          <div class="heading">Mortgage Calculator</div>
-        </div>
-      </a>
-      <p>More coming soon!</p>
+
+  <section>
+    <div class="container">
+      <div class="calc-wrapper">
+        <MortgageCalculator client:load />
+      </div>
     </div>
-  </div>
+  </section>
   <LearnCalltoAction />
 </Layout>
 

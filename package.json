@@ -1,7 +1,7 @@
 {
-  "name": "Kaseyhomeloans.com",
-  "version": "0.0.1",
-  "description": "The Kasey Home Loans main website.",
+  "name": "kaseyhomeloans.com",
+  "version": "0.0.2",
+  "description": "The Kasey Home Loans website.",
   "private": true,
   "scripts": {
     "dev": "npm run && astro dev",
@@ -37,5 +37,10 @@
     "sass": "^1.70.0",
     "sharp": "^0.33.2",
     "svelte": "^4.2.9"
+  },
+  "exports": {
+    ".": {
+      "svelte": "./dist/index.js"
+    }
   }
 }
