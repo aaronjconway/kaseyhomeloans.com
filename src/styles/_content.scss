@@ -1,18 +1,20 @@
 // formatting for the post content
 // <div class = "content"
 
-
 ul {
   list-style-type: none solid;
 
-  li {
+  li,
+  ol {
     list-style-type: circle solid;
     margin: var(--space-sm);
 
     ul {
+      margin: var(--space-sm);
       list-style-type: circle solid;
 
-      li {
+      li,
+      ol {
         list-style-type: square solid;
       }
     }
@@ -72,5 +74,4 @@ blockquote {
   position: relative;
   padding-left: 10px;
   border-left: 2px solid var(--blue-600);
-
 }

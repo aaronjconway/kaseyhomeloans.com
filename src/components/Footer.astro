@@ -1,27 +1,29 @@
 ---
 //todo make sure links are updated correctly to pages
 import Logo from './Logo.astro';
+
+//shouldn't this data be somewhere else?
 const footerData = {
   links: [
     {
       title: 'Kasey Home Loans',
       links: [
-        { text: 'Buy a Home', href: '#' },
-        { text: 'Refinance', href: '#' },
-        { text: 'FAQs', href: '#' },
-        { text: 'Loan Options', href: '#' },
-        { text: 'Rates', href: '#' },
-        { text: 'Refinance', href: '#' },
+        // { text: 'Buy a Home', href: '#' },
+        // { text: 'Refinance', href: '#' },
+        { text: 'FAQs', href: '/faq' },
+        // { text: 'Loan Options', href: '#' },
+        // { text: 'Rates', href: '#' },
+        // { text: 'Refinance', href: '#' },
       ],
     },
     {
       title: 'About',
       links: [
-        { text: 'About Us', href: '#' },
-        { text: 'Licensing', href: '#' },
-        { text: 'Privacy Policy', href: '#' },
-        { text: 'Technology', href: '#' },
-        { text: 'Texas Compliance Notice', href: '#' },
+        { text: 'About Us', href: '/about' },
+        { text: 'Licensing', href: '/licensing' },
+        { text: 'Privacy Policy', href: '/privacy-policy' },
+        // { text: 'Technology', href: '/technology' },
+        { text: 'Texas Compliance Notice', href: '/texas-compliance-notice' },
       ],
     },
     {
@@ -62,7 +64,8 @@ const { links } = footerData;
       padding-left: 0;
       li {
         list-style: none;
-        padding: var(--space-xxs) 0;
+        padding: var(--space-sm) 0;
+        margin: 0;
         color: var(--grey);
         font-size: var(--text-sm);
         &:hover {
@@ -82,6 +85,10 @@ const { links } = footerData;
     padding: var(--space-xl) 0;
   }
 
+  .title {
+    font-weight: bold;
+  }
+
   .contact-info {
     display: flex;
     flex-direction: column;
@@ -98,8 +105,6 @@ const { links } = footerData;
   }
 
   .logo {
-    margin-bottom: var(--space-md);
-
     @media (min-width: 1024px) {
       grid-column: span 1;
     }
@@ -116,8 +121,8 @@ const { links } = footerData;
   }
 
   hr {
-    margin-top: var(--space-md);
-    background: var(--mid-grey);
+    margin-top: var(--space-xl);
+    background: var(--platinum-300);
     height: 1px;
   }
 </style>

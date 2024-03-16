@@ -8,11 +8,11 @@ const { title, subtitle } = Astro.props;
   <h2 class="heading">{title ? title : 'Explore'}</h2>
   <p>{subtitle ? subtitle : 'Explore more articles, guides and tools for home buying.'}</p>
   <div class="wrapper">
-    <a href="/learn/categories/mortgage-basics" class="btn-secondary">First Time Home Buyers</a>
-    <a class="btn-secondary">Market Updates</a>
-    <a class="btn-secondary">Home Buying Guides</a>
-    <a class="btn-secondary">Calculators and Tools</a>
     <a href="/learn/categories" class="btn-secondary">Browse All Categories</a>
+    <a href="/learn/categories/mortgage-basics" class="btn-secondary">First Time Home Buyers</a>
+    <a href="/learn/categories/local-market-insights" class="btn-secondary">Local Market Insights</a>
+    <a href="/learn/categories/mortgage-rates-and-trends" class="btn-secondary">Market Updates</a>
+    <a href="/calculators" class="btn-secondary">Calculators & Tools</a>
   </div>
 </div>
 <style lang="scss">
