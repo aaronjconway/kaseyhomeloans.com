@@ -2,13 +2,56 @@
 //
 import Layout from '@/layouts/Layout.astro';
 import ContactForm from '@/components/svelte/ContactForm.svelte';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="conact us" description="a contact page todo" image="none">
   <section>
     <div class="container">
-      <h1>Contact</h1>
-      <ContactForm client:load />
+      <div class="grid">
+        <div class="contact-details">
+          <h1>Contact</h1>
+          <div class="contact-item">
+            <Icon class="icon" name="openmoji:e-mail" />
+            <div>info@kaseyhomeloans.com</div>
+          </div>
+          <div class="contact-item">
+            <Icon class="icon" name="openmoji:mobile-phone" />
+            <div>+1 (480) 685-5869</div>
+          </div>
+          <div class="contact-item">
+            <Icon class="icon" name="openmoji:location-indicator-red" />
+            <div>7550 E McDonald Dr, Ste E Scottsdale Arizona 85250</div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <ContactForm client:load />
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
+
+<style lang="scss">
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .contact-item {
+    margin: var(--space-md) 0;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .icon {
+    margin-right: var(--space-sm);
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-details {
+    margin-bottom: var(--space-lg);
+  }
+</style>

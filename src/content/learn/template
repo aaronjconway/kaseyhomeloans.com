@@ -1,0 +1,14 @@
+---
+title: "Add a title that is X long"
+description: "Add a description"
+date: Make sure to add this date.
+image: "create and add an image that is  700x400px"
+categories: ["add your categories", "lakdsjlfkajsd"]
+author: "Aaron Conway"
+---
+import Note from '../../components/Note.astro'
+
+<Note>
+  //here is a note
+</Note>
+

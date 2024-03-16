@@ -12,7 +12,6 @@ const learnCollection = defineCollection({
     image: z.string(),
     author: z.string(),
     categories: z.array(z.string()).default(['Misc']),
-    tags: z.array(z.string()).default(['Misc']),
     draft: z.boolean().optional(),
   }),
 });

@@ -51,13 +51,13 @@
       flex-direction: column;
 
       input {
-        border: 1px solid var(--mid-grey);
+        border: 1px solid var(--platinum-600);
         border-radius: 4px;
       }
 
       [id='message'] {
         text-align: left;
-        border: 1px solid var(--mid-grey);
+        border: 1px solid var(--platinum-600);
         border-radius: 4px;
         justify-content: start;
         height: var(--space-xl);
