@@ -1,0 +1,41 @@
+---
+import '@/styles/main.scss';
+import Logo from '@/components/Logo.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- // TODO: add astro seo -->
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <main id="main">
+        <div class="header">
+          <Logo />
+        </div>
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
+
+<style lang="scss">
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-lg) 0;
+  }
+
+  .wrapper {
+    height: 100%;
+    display: block;
+  }
+</style>
