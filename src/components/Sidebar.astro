@@ -1,19 +1,51 @@
+---
+// The purpose of the sidebar is to provide navigation and
+// other links or related content to keep the reader on the
+// website
+// What is should have
+// - related potss
+// - links to other such as categories or about kasey home loans.
+// - a form to capture the contact info
+//
+// The side bar takes in the data and returns the stuff.
+
+//related posts
+// const { posts } = Astro.props;
+---
+
+<aside class="wrapper">
+  <div class="sidebar-wrapper">
+    <div class="sidebar">
+      {
+        /*
+      Form based on data
+      - start with generic form
+      Related posts
+      links to other things
+      */
+      }
+    </div>
+  </div>
+</aside>
+
 <style lang="scss">
   .wrapper {
-    height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  .sidebar {
-    background-color: var(--platinum-300);
+  .sidebar-wrapper {
+    display: flex;
     position: sticky;
+    top: 0;
+  }
+
+  .sidebar {
+    margin-top: var(--space-md);
+    width: 100%;
+    background-color: var(--platinum-100);
   }
 </style>
-<aside class="wrapper">
-  <div class="sidebar">hello world</div>
-</aside>
-
 <!-- a div of the whole length of the post so we can have an inner div that scrolls with you -->
 <!-- the inner wrapper that holds the content -->
 <!-- related posts -->

@@ -13,13 +13,14 @@ import Tags from '@/components/Tags.astro';
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import Sidebar from '@/components/Sidebar.astro'
 
 export async function getStaticPaths() {
   const posts = await getCollection('learn');
 
   return posts.map((post: any) => ({
     params: { post: post.slug },
-    props: { post, posts },
+    props: { post },
   }));
 }
 
@@ -48,8 +49,10 @@ const path = Astro.url.href;
         <div class="details">
           <div class="post-author">
             <!-- TODO: Add author -->
-            Written by <a href="link to author">{post.data.author}</a> •
-            <FormattedDate date={post.data.date} />
+            Author: <a href="link to author">{post.data.author}</a>
+          </div>
+          <div>
+            Last Updated: <FormattedDate date={post.data.date} />
           </div>
           <Tags data={post.data.categories} />
           <div class="social-wrapper">
@@ -59,10 +62,13 @@ const path = Astro.url.href;
         <Content />
         <a href="#main">Back to Top</a>
       </div>
-      <!--  TODO: make a related posts -->
-      <!-- <RelatedPosts posts={relatedPosts} /> -->
-      <SimpleCTA />
+       <!-- <RelatedPosts posts={posts} /> -->
+      <Sidebar />
+
     </div>
+    <!-- instead of call to action create a better related posts -->
+
+    <SimpleCTA />
   </div>
 </Layout>
 
@@ -105,10 +111,11 @@ const path = Astro.url.href;
   .post-layout {
     display: grid;
     margin: 0 auto;
-    grid-template-columns: 1fr;
+    grid-template-columns: 4.854fr 3fr;
 
     @media (min-width: base.$lg) {
-      max-width: 70%;
+      gap:var(--space-lg)
+      //max-width: 70%;
       // display: grid;
       // grid-template-columns: repeat(12, minmax(0, 1fr));
       // .content {
@@ -120,5 +127,3 @@ const path = Astro.url.href;
     }
   }
 </style>
-// grid-column: span 4; // } } }
-

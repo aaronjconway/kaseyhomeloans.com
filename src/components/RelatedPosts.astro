@@ -4,10 +4,9 @@ TODO: these aren't done yet
 Input:
 - posts: an array of posts to pass in
 - tag: can take a tag to filter on
-- offset: posts to offset.
+- count: the amount of posts returned
 - category: take a category to filter on
 - some other param for looking up related - maybe use typesense semantic semantic search
-- amount of posts to return
 
 Output: creates a bunch of small posts based on the params
 */
@@ -16,7 +15,7 @@ import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import FormattedDate from './FormattedDate.astro';
 
-const { posts, offset } = Astro.props;
+const { posts } = Astro.props;
 
 //data is the frontmattter: maybe refactor into frontmatter?
 interface Post {
