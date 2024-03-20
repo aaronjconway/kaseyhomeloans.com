@@ -12,14 +12,12 @@ import { categories } from '@/lib/data/categories';
     .wrapper {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--space-md);
+      gap: var(--space-lg);
 
       .cat-wrapper {
-        padding: var(--space-sm);
-        a {
-          color: var(--platinum-body);
-          text-decoration: none;
-        }
+        background: var(--platinum-100);
+        border-radius: 4px;
+        padding: var(--space-md);
 
         .heading {
           font-size: var(--text-md);
@@ -33,12 +31,7 @@ import { categories } from '@/lib/data/categories';
         grid-template-columns: repeat(3, 1fr);
         gap: var(--space-xl);
         .cat-wrapper {
-          padding: var(--space-sm);
-          a {
-            color: var(--platinum-body);
-            text-decoration: none;
-          }
-
+          height: 10rem;
           .heading {
             font-size: var(--text-md);
             font-weight: bold;
@@ -77,12 +70,12 @@ import { categories } from '@/lib/data/categories';
         {
           //a map of categories
           categories.map((item) => (
-            <div class="cat-wrapper">
-              <a href={'/learn/categories/' + item.path}>
+            <a class="silent" href={'/learn/categories/' + item.path}>
+              <div class="cat-wrapper">
                 <div class="heading">{item.name}</div>
-              </a>
-              <div class="description">{item.description}</div>
-            </div>
+                <div class="description">{item.description}</div>
+              </div>
+            </a>
           ))
         }
       </div>

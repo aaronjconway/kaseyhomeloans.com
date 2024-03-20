@@ -26,7 +26,7 @@ const categories: Category[] = [
   },
   {
     "name": "Home Buying Tips",
-    "description": "Providing advice and tips for individuals navigating the home buying process, including finding the right property, understanding mortgage pre-approval, and negotiating offers.",
+    "description": "Advice and tips for individuals navigating the home buying process.",
     "page_description": "Useful infomation and things to watch out for related to the mortgage process",
     "path": "home-buying-tips"
   },
@@ -68,15 +68,9 @@ const categories: Category[] = [
   },
   {
     "name": "Legal and Regulatory Updates",
-    "description": "Keeping readers informed about changes in mortgage laws, regulations, and government programs that impact homeownership.",
+    "description": "Keeping readers informed about changes in mortgage laws, regulations, and government programs.",
     "page_description": "",
     "path": "legal-and-regulatory-updates"
-  },
-  {
-    "name": "Mortgage Calculators and Tools",
-    "description": "Offering tools and calculators to help readers estimate mortgage payments, affordability, refinance savings, and compare loan options.",
-    "page_description": "",
-    "path": "mortgage-calculators-and-tools"
   },
   {
     "name": "Home Equity and Investment",
@@ -89,12 +83,6 @@ const categories: Category[] = [
     "description": "Providing guidance on improving credit scores, managing debt responsibly, and navigating financing options for different financial situations.",
     "page_description": "",
     "path": "credit-and-financing-tips"
-  },
-  {
-    "name": "Home Buying Mistakes to Avoid",
-    "description": "Identifying common pitfalls and mistakes to avoid when purchasing a home, such as overextending financially, neglecting inspections, or skipping important paperwork.",
-    "page_description": "",
-    "path": "home-buying-mistakes-to-avoid"
   },
   {
     "name": "Local Market Insights",
