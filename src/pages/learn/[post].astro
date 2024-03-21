@@ -13,7 +13,7 @@ import Tags from '@/components/Tags.astro';
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import Sidebar from '@/components/Sidebar.astro'
+import Sidebar from '@/components/Sidebar.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('learn');
@@ -62,9 +62,8 @@ const path = Astro.url.href;
         <Content />
         <a href="#main">Back to Top</a>
       </div>
-       <!-- <RelatedPosts posts={posts} /> -->
+      <!-- <RelatedPosts posts={posts} /> -->
       <Sidebar />
-
     </div>
     <!-- instead of call to action create a better related posts -->
 
@@ -114,7 +113,7 @@ const path = Astro.url.href;
     grid-template-columns: 4.854fr 3fr;
 
     @media (min-width: base.$lg) {
-      gap:var(--space-lg)
+      gap: var(--space-lg);
       //max-width: 70%;
       // display: grid;
       // grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -126,4 +125,5 @@ const path = Astro.url.href;
       // }
     }
   }
+</style>
 </style>

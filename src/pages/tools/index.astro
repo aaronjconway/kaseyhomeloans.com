@@ -1,6 +1,6 @@
 ---
 /* leaving this for now becuase later we might want
- * associated posts for each calculatro
+ * associated posts for each tool
  */
 //------------------------------------------------------------------------
 /// import SmallPosts from '@/components/SmallPosts.astro';/
@@ -29,18 +29,24 @@ import { Icon } from 'astro-icon/components';
     <div class="container">
       <div class="heading">
         <p class="sub-heading"></p>
-        <h1>Calculators</h1>
-        <p>Built completely in house for efficiency and accuracy</p>
+        <h1>Mortgage Tools</h1>
+        <p>Build completely in house prioritizing functionality and usefulness.</p>
       </div>
     </div>
   </section>
   <LearnBanner title="Looking for something else?" />
   <div class="container">
     <div class="calc-wrapper">
-      <a class="silent" href="/calculators/mortgage-calculator ">
+      <a class="silent" href="/tools/mortgage-calculator ">
         <div class="calc-card">
           <Icon class="calc-icon" name="ic:twotone-percent" />
           <div class="heading">Mortgage Calculator</div>
+        </div>
+      </a>
+      <a class="silent" href="/tools/mortgage-terms">
+        <div class="calc-card">
+          <Icon class="calc-icon" name="ic:twotone-book" />
+          <div class="heading">Glossary of Mortgage Terms</div>
         </div>
       </a>
       <p>More coming soon!</p>
@@ -52,6 +58,8 @@ import { Icon } from 'astro-icon/components';
 <style lang="scss">
   @use '@/styles/base.scss';
 
+  section {
+  }
   .grid {
     display: grid;
     grid-template-columns: 1;
@@ -76,8 +84,16 @@ import { Icon } from 'astro-icon/components';
   }
 
   .calc-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
     margin: var(--space-sm) 0;
     order: -1;
+    @media (min-width: base.$lg) {
+      display: flex;
+      flex-wrap: auto;
+      gap: var(--space-lg);
+    }
   }
 
   h1 {
@@ -90,11 +106,13 @@ import { Icon } from 'astro-icon/components';
 
   @media (min-width: base.$lg) {
     .heading {
-      max-width: 50%;
+      font-size: var(--text-base-size);
     }
 
     .calc-card {
-      max-width: 15rem;
+      text-align: center;
+      width: 12rem;
+      height: 10rem;
     }
 
     .calc-wrapper {

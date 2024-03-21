@@ -1,0 +1,99 @@
+---
+/* leaving this for now becuase later we might want
+ * associated posts for each calculatro
+ */
+//------------------------------------------------------------------------
+/// import SmallPosts from '@/components/SmallPosts.astro';/
+// import { getCollection } from 'astro:content';
+//
+// const all_posts = await getCollection('learn');
+//
+// // sort posts by date
+// all_posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+//
+// const page_count = Math.ceil(all_posts.length / 6);
+//
+// const topPosts = all_posts.slice(0, 4);
+// const first_page_posts = all_posts.slice(4, 10);
+
+// ----------------------------------------------------------------------
+
+import Layout from '@/layouts/Layout.astro';
+import LearnCalltoAction from '@/components/sections/LearnCalltoAction.astro';
+import Calculator from '@/components/svelte/MortgageCalculator.svelte';
+---
+
+<Layout title={'Learning Center'} image={'todo'} description={'todo'}>
+  <section>
+    <div class="container">
+      <div class="heading">
+        <p class="sub-heading"></p>
+        <h1>Mortgage Calculator</h1>
+        <!-- <p>Built completely in house for efficiency and accuracy</p> -->
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="calc-wrapper">
+        <Calculator client:load />
+      </div>
+    </div>
+  </section>
+  <LearnCalltoAction />
+</Layout>
+
+<style lang="scss">
+  @use '@/styles/base.scss';
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1;
+    justify-content: center;
+  }
+
+  .calc-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-md);
+    background: var(--platinum-200);
+    border-radius: 4px;
+    font-size: var(--text-md);
+
+    .calc-icon {
+      height: var(--space-xl);
+      width: var(--space-xl);
+      margin-bottom: var(--space-md);
+    }
+  }
+
+  .calc-wrapper {
+    margin: var(--space-sm) 0;
+    order: -1;
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  h2 {
+    margin-top: var(--space-xl);
+  }
+
+  @media (min-width: base.$lg) {
+    .heading {
+      max-width: 50%;
+    }
+
+    .calc-card {
+      max-width: 15rem;
+    }
+
+    .calc-wrapper {
+      margin: var(--space-xl) 0;
+    }
+  }
+</style>

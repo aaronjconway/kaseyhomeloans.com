@@ -1,46 +1,24 @@
 ---
-/* leaving this for now becuase later we might want
- * associated posts for each calculatro
+/*
+ *  a list of all mortgage terms and also doubles as a display for our
+ *  terms data base that we'll be using for tool tip pop ups on other pages.
  */
-//------------------------------------------------------------------------
-/// import SmallPosts from '@/components/SmallPosts.astro';/
-// import { getCollection } from 'astro:content';
-//
-// const all_posts = await getCollection('learn');
-//
-// // sort posts by date
-// all_posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-//
-// const page_count = Math.ceil(all_posts.length / 6);
-//
-// const topPosts = all_posts.slice(0, 4);
-// const first_page_posts = all_posts.slice(4, 10);
-
-// ----------------------------------------------------------------------
 
 import Layout from '@/layouts/Layout.astro';
 import LearnCalltoAction from '@/components/sections/LearnCalltoAction.astro';
-import MortgageCalculator from '@/components/svelte/MortgageCalculator.svelte';
+import Terms from '@/components/svelte/MortgageTerms.svelte';
 ---
 
 <Layout title={'Learning Center'} image={'todo'} description={'todo'}>
   <section>
     <div class="container">
       <div class="heading">
-        <p class="sub-heading"></p>
-        <h1>Mortgage Calculator</h1>
-        <!-- <p>Built completely in house for efficiency and accuracy</p> -->
+        <h1>Mortgage Glossary</h1>
+        <p>Search mortgage terms and switch to grug brain if needed!</p>
       </div>
     </div>
   </section>
-
-  <section>
-    <div class="container">
-      <div class="calc-wrapper">
-        <MortgageCalculator client:load />
-      </div>
-    </div>
-  </section>
+  <Terms client:load />
   <LearnCalltoAction />
 </Layout>
 

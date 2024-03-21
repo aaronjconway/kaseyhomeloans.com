@@ -2,7 +2,7 @@
 /*
 TODO: these aren't done yet
 Input:
-- posts: an array of posts to pass in
+- frontmatter: the post frontmatter data. we can use this to filter
 - tag: can take a tag to filter on
 - count: the amount of posts returned
 - category: take a category to filter on
@@ -15,7 +15,7 @@ import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import FormattedDate from './FormattedDate.astro';
 
-const { posts } = Astro.props;
+const { count, frontmatter } = Astro.props;
 
 //data is the frontmattter: maybe refactor into frontmatter?
 interface Post {

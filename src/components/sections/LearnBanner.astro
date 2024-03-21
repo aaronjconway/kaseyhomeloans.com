@@ -12,15 +12,20 @@ const { title, subtitle } = Astro.props;
     <a href="/learn/categories/mortgage-basics" class="btn-secondary">First Time Home Buyers</a>
     <a href="/learn/categories/local-market-insights" class="btn-secondary">Local Market Insights</a>
     <a href="/learn/categories/mortgage-rates-and-trends" class="btn-secondary">Market Updates</a>
-    <a href="/calculators" class="btn-secondary">Calculators & Tools</a>
+    <a href="/tools" class="btn-secondary">Calculators & Tools</a>
   </div>
 </div>
 <style lang="scss">
   @use '@/styles/base.scss';
 
   .heading {
-    font-size: var(--text-xl);
+    font-size: var(--text-md);
     margin-bottom: var(--space-sm);
+    margin: 0;
+  }
+
+  .container {
+    margin-bottom: var(--space-lg);
   }
 
   //desktop
